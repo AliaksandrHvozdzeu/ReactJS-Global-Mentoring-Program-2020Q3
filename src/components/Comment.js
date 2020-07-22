@@ -4,16 +4,33 @@ class Comment extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {firstName: "Aliaksandr", lastName: "Hvozdzeu"};
+        this.state = {hello: "Hello", world: "World!"};
+        this.sayHelloAll = this.sayHelloAll.bind(this);
+        this.sayHelloWorld = this.sayHelloWorld.bind(this);
+    }
+
+    sayHelloAll() {
+        this.setState({world: "All!"});
+    }
+
+    sayHelloWorld() {
+        this.setState({world: "World!"});
     }
 
     render() {
         const style = {
             color: "white",
-            padding: "10px",
             fontFamily: "Arial"
         };
-        return <span style={style}>I'm a {this.state.firstName} {this.state.lastName}!</span>;
+
+        return (
+            <>
+                <p style={style}>React.Component: {this.state.hello} {this.state.world}</p>
+                <button onClick={this.sayHelloAll}>All!</button>
+                <button onClick={this.sayHelloWorld}>World!</button>
+            </>
+        );
+
     }
 
 }

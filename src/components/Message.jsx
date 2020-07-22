@@ -1,9 +1,20 @@
-import React, { PureComponent } from "react"
+import React, {PureComponent} from "react"
 
 class Message extends PureComponent {
+
     render() {
-        return <p style={{ margin: "10px" }}> {this.props.message} </p>
+        return (
+            <>
+                <p style={style}> {this.props.message} </p>
+            </>
+        )
     }
 }
+
+const style = {
+    color: "white",
+    margin: "10px",
+    fontFamily: "Arial"
+};
 
 export default Message;

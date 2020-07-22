@@ -3,12 +3,12 @@ import './App.css';
 import Comment from "./components/Comment";
 import Message from "./components/Message";
 
-const myComponent = <div>Hello</div>;
+const myComponent = <div>myComponent: Hello World!</div>;
 
-let about = React.createElement(
-    "h1",
-    { style: { color: "white" } },
-    `I'm learning ReactJS.`
+let createElement = React.createElement(
+    "p",
+    {style: {color: "white"}},
+    `React.createElement: Hello World!`
 );
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
             <header className="App-header">
                 {myComponent}
                 <Comment/>
-                {about}
+                {createElement}
                 <Message
-                    message={"This is test message through props"}
+                    message={"React.PureComponent: Hello World!"}
                 />
             </header>
         </div>
