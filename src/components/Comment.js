@@ -19,7 +19,7 @@ class Comment extends React.Component {
 
     render() {
         const style = {
-            color: "white",
+            color: "#000",
             fontFamily: "Arial"
         };
 

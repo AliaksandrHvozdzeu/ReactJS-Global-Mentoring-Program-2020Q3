@@ -12,7 +12,7 @@ class Message extends PureComponent {
 }
 
 const style = {
-    color: "white",
+    color: "#000",
     margin: "10px",
     fontFamily: "Arial"
 };

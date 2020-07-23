@@ -7,21 +7,19 @@ const myComponent = <div>myComponent: Hello World!</div>;
 
 let createElement = React.createElement(
     "p",
-    {style: {color: "white"}},
+    {style: {color: "#000"}},
     `React.createElement: Hello World!`
 );
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                {myComponent}
-                <Comment/>
-                {createElement}
-                <Message
-                    message={"React.PureComponent: Hello World!"}
-                />
-            </header>
+            {myComponent}
+            <Comment/>
+            {createElement}
+            <Message
+                message={"React.PureComponent: Hello World!"}
+            />
         </div>
     );
 }
