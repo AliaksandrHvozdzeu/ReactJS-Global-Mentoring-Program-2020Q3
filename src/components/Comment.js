@@ -1,4 +1,5 @@
 import React from "react";
+import comment from "../App.css";
 
 class Comment extends React.Component {
 
@@ -18,14 +19,9 @@ class Comment extends React.Component {
   }
 
   render() {
-    const style = {
-      color: "#000",
-      fontFamily: "Arial"
-    };
-
     return (
       <>
-        <p style={style}>React.Component: {this.state.hello} {this.state.world}</p>
+        <p style={ comment }>React.Component: {this.state.hello} {this.state.world}</p>
         <button onClick={this.sayHelloAll}>All!</button>
         <button onClick={this.sayHelloWorld}>World!</button>
       </>
