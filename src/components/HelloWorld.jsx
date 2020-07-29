@@ -1,3 +1,7 @@
 import React from 'react';
 
-export default () => <p>Hello World!</p>;
+export default class HelloWorld extends React.PureComponent {
+  render() {
+    return <p>Hello World!</p>;
+  }
+}

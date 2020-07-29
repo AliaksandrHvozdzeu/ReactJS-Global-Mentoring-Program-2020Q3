@@ -5,9 +5,16 @@ const common = require('./webpack.config.common');
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
+  watch: false,
   devServer: {
-    contentBase: path.join(__dirname, '..', 'dist'),
+    contentBase: path.join(__dirname, 'dev'),
     compress: true,
     port: 3000,
+    open: true,
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
 });

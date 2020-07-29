@@ -2,9 +2,16 @@
   "name": "2020q3",
   "description": "ReactJS Global Mentoring Program 2020Q3",
   "version": "1.0.0",
-  "author": "Hvozdzeu Aliaksandr <Aliaksandr_Hvozdzeu@epam.com, aliaksandr.hvozdzeu@gmail.com>",
+  "author": "Hvozdzeu Aliaksandr <Aliaksandr_Hvozdzeu@epam.com>",
   "license": "ISC",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gvozdev1986/ReactJS-Global-Mentoring-Program-2020Q3.git"
+  },
+  "keywords": [
+    "react-js"
+  ],
   "scripts": {
     "start": "webpack-dev-server --open --hot",
     "build:prod": "set env ENV=prod && webpack",
