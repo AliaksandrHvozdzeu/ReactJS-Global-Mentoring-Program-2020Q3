@@ -1,13 +1,15 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: './src/index.jsx',
   output: {
-    path: path.join(__dirname, '..', 'dist'),
+    path: path.join(__dirname, '..', '/dist'),
     filename: 'app.bundle.js',
   },
+
   module: {
     rules: [
       {
@@ -19,14 +21,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
     }),
+    new MiniCssExtractPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

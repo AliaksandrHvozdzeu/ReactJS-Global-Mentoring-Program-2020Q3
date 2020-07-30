@@ -8,11 +8,12 @@ module.exports = merge(common, {
   watch: false,
   devServer: {
     contentBase: path.join(__dirname, 'dev'),
-    compress: true,
+    compress: false,
     port: 3000,
     open: true,
   },
   optimization: {
+    minimize: false,
     splitChunks: {
       chunks: 'all',
     },
