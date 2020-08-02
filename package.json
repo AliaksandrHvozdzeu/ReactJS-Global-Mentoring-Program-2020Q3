@@ -14,15 +14,13 @@
   ],
   "scripts": {
     "start": "webpack-dev-server --open --hot",
-    "build:prod": "set env ENV=prod && webpack",
-    "build:dev": "set env ENV=dev && webpack",
+    "build:prod": "set env NODE_ENV=prod && webpack",
+    "build:dev": "set env NODE_ENV=dev && webpack",
     "lint": "eslint ./src --ext .js,.jsx",
     "test": "jest --no-cache --coverage --config jest.config.json"
   },
   "dependencies": {
     "@babel/runtime": "^7.10.5",
-    "@jest/globals": "^26.1.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -51,6 +49,7 @@
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.1.0",
     "mini-css-extract-plugin": "^0.9.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "2.0.5",
     "redux-devtools": "^3.5.0",
     "style-loader": "^1.2.1",

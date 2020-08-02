@@ -8,7 +8,6 @@ module.exports = {
     path: path.join(__dirname, '..', '/dist'),
     filename: 'app.bundle.js',
   },
-
   module: {
     rules: [
       {
@@ -25,11 +24,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-      favicon: "./public/favicon.ico"
-    }),
     new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({template: './public/index.html', favicon: "./public/favicon.ico"}),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],
