@@ -1,0 +1,112 @@
+.filter-list {
+    color: var(--white);
+    font-size: 1.2rem;
+    letter-spacing: 0.1rem;
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.filter-list * {
+    letter-spacing: 0.1rem;
+}
+
+.filter-list::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(180deg, rgba(122, 121, 121, 1) 0%, rgba(85, 85, 85, 1) 20%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 5px;
+}
+
+.filter-item {
+    display: inline-block;
+    width: 49%;
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+/* filter by genre */
+.filter-item:not(:last-child) {
+    margin-right: 2%;
+}
+
+.filter-item:first-child ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.genre-filter-item {
+    text-transform: uppercase;
+}
+
+.genre-filter-item:not(:last-child) {
+    margin-right: 2rem;
+}
+
+.genre-filter-item, .genre-filter-item a {
+    list-style-type: none;
+    text-decoration: none;
+    color: var(--white);
+    position: relative;
+}
+
+.genre-filter-item a:hover::after {
+    position: absolute;
+    content: '';
+    border-bottom: 3px solid var(--red);
+    left: 0;
+    right: 0;
+    bottom: -19px;
+    z-index: 2;
+    border-radius: 1px;
+}
+
+.genre-filter-item {
+    text-transform: uppercase;
+}
+
+/* filter by date */
+.filter {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.filter-title {
+    color: var(--white);
+    font-weight: 100;
+}
+
+.filter-select {
+    background-color: var(--grey-darker);
+    color: var(--white);
+    font-size: 1.2rem;
+    outline: none;
+    margin-left: 2rem;
+}
+
+.filter-select:hover {
+    cursor: pointer;
+}
+
+.filter-select::after {
+    content: '';
+    border-top: 5px solid var(--red);
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}

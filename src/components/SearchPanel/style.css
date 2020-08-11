@@ -1,0 +1,22 @@
+.search {
+    margin: 0 5%;
+    height: 80%;
+    padding: 2% 0;
+}
+
+.search-panel {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.search-title {
+    display: block;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: lighter;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+}

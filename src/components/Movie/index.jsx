@@ -1,0 +1,39 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import MovieMenu from '../MovieMenu';
+import './style.css';
+
+const Movie = ({ details }) => (
+  <div className="movie-result-item movie">
+    <img className="movie-logo" src={details.url} alt="movie poster" />
+    <div className="movie-description">
+      <button className="movie-title" type="button">{details.title}</button>
+      <p className="movie-genre">{details.genre}</p>
+      <p className="movie-release">{details.release}</p>
+    </div>
+    <MovieMenu
+      deleteAction={() => deleteMovie()}
+      editAction={() => editMovie()}
+    />
+  </div>
+);
+
+function deleteMovie() {
+  console.log("delete movie");
+}
+
+function editMovie() {
+  console.log("edit movie");
+}
+
+Movie.propTypes = {
+  details: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    url: PropTypes.string.isRequired,
+    genre: PropTypes.string.isRequired,
+    releaseYear: PropTypes.string.isRequired
+  }).isRequired
+};
+
+export default Movie;

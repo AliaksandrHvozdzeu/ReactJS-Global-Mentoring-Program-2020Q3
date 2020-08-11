@@ -1,0 +1,114 @@
+.movie-menu-button {
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: 75%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: var(--white);
+}
+
+.movie__menu {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--grey-darker-transparent);
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.movie-menu-closed {
+    width: 40px;
+    height: 40px;
+    display: none;
+}
+
+.movie-menu-closed:hover {
+    background-color: var(--grey-transparent);
+}
+
+.movie-menu-closed:active {
+    background-color: var(--grey-darker);
+}
+
+.movie-menu-closed::before {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: 25%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: var(--white);
+}
+
+.movie-menu-closed::after {
+    content: '';
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: var(--white);
+}
+
+.movie-menu-opened {
+    border-radius: 5px;
+    width: 10rem;
+    height: 7rem;
+    padding: 1.5rem 0 1rem;
+    cursor: default;
+}
+
+.movie-menu-action {
+    width: 100%;
+    border-radius: 0;
+    background-color: transparent;
+    text-align: left;
+    color: var(--white);
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 200;
+    padding: 0.5rem 1rem;
+    outline: none;
+}
+
+.movie-menu-action:hover {
+    background-color: var(--red);
+}
+
+.movie-menu-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    color: transparent;
+    border: transparent;
+    outline: none;
+}
+
+.movie-menu-close::before {
+    content: '';
+    position: absolute;
+    border-top: 2px solid var(--white);
+    transform: rotate(45deg);
+    width: 1rem;
+    left: 30%;
+    top: 80%;
+}
+
+.movie-menu-close::after {
+    content: '';
+    position: absolute;
+    border-top: 2px solid var(--white);
+    transform: rotate(-45deg);
+    width: 1rem;
+    left: 30%;
+    top: 80%;
+}
