@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import MovieMenu from '../MovieMenu';
 import './style.css';
 
+function deleteMovie() {
+    console.log("delete movie");
+}
+
+function editMovie() {
+    console.log("edit movie");
+}
+
 const Movie = ({ details }) => (
   <div className="movie-result-item movie">
     <img className="movie-logo" src={details.url} alt="movie poster" />
@@ -18,21 +26,13 @@ const Movie = ({ details }) => (
   </div>
 );
 
-function deleteMovie() {
-  console.log("delete movie");
-}
-
-function editMovie() {
-  console.log("edit movie");
-}
-
 Movie.propTypes = {
   details: PropTypes.shape({
     id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     url: PropTypes.string.isRequired,
     genre: PropTypes.string.isRequired,
-    releaseYear: PropTypes.string.isRequired
+    release: PropTypes.string.isRequired
   }).isRequired
 };
 
