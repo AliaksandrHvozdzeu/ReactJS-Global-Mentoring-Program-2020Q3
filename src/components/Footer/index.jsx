@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css';
 import Wrapper from '../Wrapper';
 
-export default () => (
+const Footer = () => (
   <footer>
     <Wrapper>
       <p className="app-title">
@@ -11,4 +11,6 @@ export default () => (
       </p>
     </Wrapper>
   </footer>
-);
+)
+
+export default Footer;

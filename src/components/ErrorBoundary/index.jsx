@@ -13,9 +13,8 @@ class ErrorBoundary extends Component {
     return { hasError: true };
   }
 
-  componentDidCatch(error, errorInfo) {
-    this.setState({ hasError: true });
-    console.log(`ERROR: ${error}`, errorInfo);
+  componentDidCatch() {
+    this.setState({ hasError: true});
   }
 
   render() {
@@ -35,7 +34,7 @@ class ErrorBoundary extends Component {
 ErrorBoundary.propTypes = {
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node
-  ]).isRequired
+    PropTypes.node,
+  ]).isRequired,
 };
 export default ErrorBoundary;

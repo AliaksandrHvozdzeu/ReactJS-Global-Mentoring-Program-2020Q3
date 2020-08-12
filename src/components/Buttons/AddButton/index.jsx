@@ -1,8 +1,10 @@
 import React from 'react';
 import './style.css';
 
-export default () => (
+const AddButton = () => (
   <>
     <button type="button" className="add-button">+ ADD MOVIE</button>
   </>
-);
+)
+
+export default AddButton;

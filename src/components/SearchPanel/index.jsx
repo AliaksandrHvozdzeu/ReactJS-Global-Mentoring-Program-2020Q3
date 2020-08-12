@@ -1,18 +1,19 @@
 import React from 'react';
 import AddButton from '../Buttons/AddButton';
 import SearchButton from '../Buttons/SearchButton';
-import SearchInput from '../Inputs/SearchInput';
 import './style.css';
 
-export default () => (
+const SearchPanel = () => (
   <div className="search">
     <label htmlFor="search-field" className="search-title">
       FIND YOUR MOVIE
       <div className="search-panel">
-        <SearchInput/>
+        <input type="text" id="search-field" className="search-field" placeholder="What do you want to watch?"/>
         <SearchButton/>
         <AddButton/>
       </div>
     </label>
   </div>
-);
+)
+
+export default SearchPanel;

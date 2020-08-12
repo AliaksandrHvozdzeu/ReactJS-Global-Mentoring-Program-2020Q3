@@ -4,11 +4,11 @@ import MovieMenu from '../MovieMenu';
 import './style.css';
 
 function deleteMovie() {
-    console.log("delete movie");
+  // TODO: Implement method for deleting movie by movie ID
 }
 
 function editMovie() {
-    console.log("edit movie");
+  // TODO: Implement method for adding new movie
 }
 
 const Movie = ({ details }) => (

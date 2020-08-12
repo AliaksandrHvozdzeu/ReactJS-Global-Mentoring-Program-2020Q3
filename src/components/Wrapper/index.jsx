@@ -13,9 +13,8 @@ class Wrapper extends Component {
     return { hasError: true };
   }
 
-  componentDidCatch(error, errorInfo) {
-    this.setState({ hasError: true });
-    console.log(`ERROR: ${error}`, errorInfo);
+  componentDidCatch() {
+    this.setState({ hasError: true});
   }
 
   render() {
