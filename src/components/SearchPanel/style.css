@@ -4,6 +4,20 @@
     padding: 2% 0;
 }
 
+.search-field {
+    height: 3rem;
+    width: 84%;
+    color: var(--white);
+    background-color: var(--grey-darker);
+    font-size: 1.2rem;
+    border-radius: 4px;
+    box-shadow: 0 0 10px 0 #2323239a;
+    opacity: 0.8;
+    outline: none;
+    padding: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
 .search-panel {
     margin-top: 2rem;
     display: flex;
