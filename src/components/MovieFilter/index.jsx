@@ -6,7 +6,7 @@ const MovieFilter = () => (
     <section className="filter-list">
       <div className="filter-item filter-by-genre">
         <ul className="genre-filter">
-          <li className="genre-filter-item">
+          <li className="genre-filter-item active">
             <a href="#all">All</a>
           </li>
           <li className="genre-filter-item">
