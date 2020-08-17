@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
-class ErrorBoundary extends Component {
+class ErrorBoundary extends React.Component {
 
   constructor(props) {
     super(props);
