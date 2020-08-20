@@ -1,0 +1,52 @@
+.movie-result-item {
+  color: var(--white);
+}
+
+.movie-result-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  position: relative;
+}
+
+.movie-result-item:hover .movie__menu {
+  display: inline-block;
+}
+
+.movie-logo {
+  height: 500px;
+}
+
+.movie-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-weight: 100;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.movie-title {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  background-color: transparent;
+  text-align: left;
+  outline: none;
+}
+
+.movie-genre {
+  font-size: 1rem;
+  color: #8d8d8d;
+}
+
+.movie-release {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 1px solid var(--white);
+  border-radius: 5px;
+  font-weight: lighter;
+  padding: 5px 8px;
+  line-height: 1.2rem;
+  font-size: 1.2rem;
+}

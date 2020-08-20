@@ -1,0 +1,25 @@
+.movie-result {
+  color: var(--white);
+}
+
+.movie-result-title {
+  height: 5rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.movie-result-count::after {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+}
+
+.movie-result-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  column-gap: 3rem;
+  row-gap: 3rem;
+  justify-items: start;
+  margin: 1rem auto 2rem;
+}

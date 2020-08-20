@@ -16,14 +16,15 @@
     "start": "webpack-dev-server --open --hot",
     "build:prod": "set env NODE_ENV=prod && webpack",
     "build:dev": "set env NODE_ENV=dev && webpack",
-    "lint": "eslint ./src --ext .js,.jsx",
+    "lint": "eslint ./src --ext .js,.jsx ",
     "test": "jest --no-cache --coverage --config jest.config.json"
   },
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-transform-runtime": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
+    "@babel/runtime": "^7.10.5",
     "@testing-library/react": "^10.4.7",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -42,18 +43,18 @@
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "2.0.5",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
     "redux-devtools": "^3.5.0",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^3.0.8",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.0.9",
-    "@babel/runtime": "^7.10.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.0",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5"
+    "webpack-merge": "^5.0.9"
   }
 }

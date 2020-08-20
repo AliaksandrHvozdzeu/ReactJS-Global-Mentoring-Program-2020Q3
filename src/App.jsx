@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { HomePage } from './views';
 import './App.css';
-import HelloWorld from './components/HelloWorld';
+import data from '../data-mock.json';
 
-const App = () => (
-  <div className="App">
-    <HelloWorld/>
-  </div>
-);
+export default () => {
 
-export default App;
+  const [state] = useState({
+    results: data,
+  });
+
+  return (
+    <>
+      <HomePage preview={state.preview} results={state.results}/>
+    </>
+  );
+
+};

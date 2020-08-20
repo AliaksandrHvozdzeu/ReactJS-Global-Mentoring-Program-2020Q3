@@ -1,0 +1,24 @@
+.page-no-results {
+
+}
+
+.back-button {
+    color: var(--grey-lighter-transparent);
+    background-color: var(--grey-transparent);
+    text-transform: uppercase;
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 1rem;
+}
+
+.back-button:hover {
+    background-color: var(--grey-lighter-transparent);
+}
+
+.back-button:active {
+    background-color: var(--grey);
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Pulp Fiction",
+    "genre": "Action & Adventure",
+    "description": "",
+    "url": "/images/pulp_fiction.jpg",
+    "release": 2004,
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "title": "Bohemian Rhapsody",
+    "genre": "Drama, Biography, Music",
+    "description": "",
+    "url": "/images/rapsody.jpg",
+    "release": 2003,
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "title": "Kill Bill: Vol2",
+    "genre": "Oscar winning movie",
+    "description": "",
+    "url": "/images/kill_bill_2.jpg",
+    "release": 1994,
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "title": "Avengers: War of Infinity",
+    "genre": "Action & Adventure",
+    "description": "",
+    "url": "/images/avengers_infi_war.jpg",
+    "release": 2004,
+    "rating": 3
+  },
+  {
+    "id": 5,
+    "title": "Intercaption",
+    "genre": "Action & Adventure",
+    "description": "",
+    "url": "/images/inception.jpg",
+    "release": 2003,
+    "rating": 3
+  },
+  {
+    "id": 6,
+    "title": "Reservoir Dogs",
+    "genre": "Oscar winning Movie",
+    "description": "",
+    "url": "/images/reservoirs_dogs.jpg",
+    "release": 1994,
+    "rating": 4.5
+  }
+]
