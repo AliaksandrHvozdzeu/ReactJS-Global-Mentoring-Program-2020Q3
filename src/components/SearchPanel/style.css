@@ -27,10 +27,33 @@
 }
 
 .search-title {
+    margin-top: 50px;
     display: block;
     color: var(--white);
     text-transform: uppercase;
     font-weight: lighter;
     font-size: 2.5rem;
     letter-spacing: 0.1rem;
+}
+
+.search-button {
+    font-size: 1.2rem;
+    font-weight: 200;
+    height: 3rem;
+    padding: 0.5rem 4rem;
+    color: var(--white);
+    background-color: var(--red);
+    text-transform: uppercase;
+    border-radius: 4px;
+    outline: none;
+    letter-spacing: 0.1rem;
+}
+
+.search-button:hover {
+    background-color: var(--red-lighter);
+}
+
+.search-button:active {
+    box-shadow: inset 0 0 0 1px #000000;
+    background-color: var(--red-darker);
 }

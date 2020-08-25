@@ -9,7 +9,7 @@
     background-color: var(--white);
 }
 
-.movie__menu {
+.movie-menu {
     position: absolute;
     top: 1rem;
     right: 1rem;

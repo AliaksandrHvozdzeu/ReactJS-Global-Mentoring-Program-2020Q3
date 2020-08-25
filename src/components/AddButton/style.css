@@ -1,0 +1,55 @@
+.add-button {
+    color: var(--red);
+    background-color: var(--grey-transparent);
+    text-transform: uppercase;
+    padding: 1rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    position: absolute;
+    right: 0;
+    top: 1rem;
+}
+
+.add-button:hover {
+    background-color: var(--grey-lighter-transparent);
+}
+
+.add-button:active {
+    background-color: var(--grey);
+}
+
+.add-movie-modal {
+    width: 45rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #232323;
+    overflow: auto;
+    outline: none;
+    padding: 52px 52px 30px;
+}
+
+.add-movie-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.ReactModal__Overlay {
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    z-index: 10;
+}
+
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+}

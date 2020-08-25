@@ -1,13 +1,18 @@
-import React  from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import MovieResults from '../MovieResultList';
 import NotFound from '../NotFoundMovie';
 import './style.css';
 
+const MovieResults = React.lazy(() => import('../MovieResultList'));
+
 const SearchResults = ({ searchResults }) => (
   <>
-    {searchResults && <MovieResults results={searchResults} />}
-    {!searchResults && <NotFound />}
+    {searchResults && (
+      <React.Suspense fallback={<h3>Loading... Please wait.</h3>}>
+        <MovieResults results={searchResults}/>
+      </React.Suspense>
+    )}
+    {!searchResults && <NotFound/>}
   </>
 );
 
@@ -17,12 +22,12 @@ SearchResults.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
+      poster: PropTypes.string.isRequired,
       genre: PropTypes.string.isRequired,
       release: PropTypes.string.isRequired,
-      rating: PropTypes.string.isRequired
-    }).isRequired
-  ).isRequired
+      rating: PropTypes.string.isRequired,
+    }).isRequired,
+  ).isRequired,
 };
 
 export default SearchResults;

@@ -27,7 +27,7 @@ class Wrapper extends React.Component {
         </div>
       );
     }
-    return <div className="wrapper">{children}</div>;
+    return <div className="wrapper unselectable">{children}</div>;
   }
 }
 

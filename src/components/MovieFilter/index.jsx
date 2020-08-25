@@ -1,43 +1,27 @@
 import React from 'react';
+import Constants from '../../constants';
 import './style.css';
+import GenreFilter from '../MovieGenreFilter';
+import MovieSorting from '../MovieSorting';
+import PropTypes from 'prop-types';
+import MovieEdit from '../MovieEdit';
 
-const MovieFilter = () => (
+const MovieFilter = ({ onFilterByGenre, onSorting }) => (
   <>
     <section className="filter-list">
       <div className="filter-item filter-by-genre">
-        <ul className="genre-filter">
-          <li className="genre-filter-item active">
-            <a href="#all">All</a>
-          </li>
-          <li className="genre-filter-item">
-            <a href="#documentary">Documentary</a>
-          </li>
-          <li className="genre-filter-item">
-            <a href="#comedy">Comedy</a>
-          </li>
-          <li className="genre-filter-item">
-            <a href="#horror">Horror</a>
-          </li>
-          <li className="genre-filter-item">
-            <a href="#crime">Crime</a>
-          </li>
-        </ul>
+        <GenreFilter genres={Constants.FILTERS} action={onFilterByGenre} />
       </div>
       <div className="filter-item filter">
-        <label htmlFor="filter" className="filter-title">
-          Sort by
-          <select id="filter" className="filter-select custom-select">
-            <option className="filter-item" value="RELEASE_DATE" selected>
-              RELEASE DATE
-            </option>
-            <option className="filter-item" value="RATING">
-              RATING
-            </option>
-          </select>
-        </label>
+        <MovieSorting title="SORT BY" options={Constants.SORTING} onAction={onSorting} />
       </div>
     </section>
   </>
 );
+
+MovieEdit.propTypes = {
+  onFilterByGenre: PropTypes.func.isRequired,
+  onSorting: PropTypes.func.isRequired
+};
 
 export default MovieFilter;

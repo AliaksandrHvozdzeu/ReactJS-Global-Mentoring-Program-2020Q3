@@ -1,1 +1,1 @@
-#Movie details component
+#Movie details in poster component

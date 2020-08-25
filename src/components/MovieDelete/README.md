@@ -1,0 +1,1 @@
+#Delete modal window component

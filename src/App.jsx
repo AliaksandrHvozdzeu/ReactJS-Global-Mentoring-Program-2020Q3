@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HomePage } from './views';
+import { HomePage } from './containers';
 import './App.css';
 import data from '../data-mock.json';
 

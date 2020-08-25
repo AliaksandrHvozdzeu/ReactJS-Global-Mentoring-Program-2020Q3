@@ -1,0 +1,17 @@
+.input-email {
+    line-height: 2rem;
+    font-size: 1rem;
+    background-color: #2E2E2E;
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.input-email-label {
+    display: block;
+    text-transform: uppercase;
+    color: var(--red);
+    font-size: 1.0rem;
+    margin-bottom: 1.5rem;
+}

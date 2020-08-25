@@ -33,7 +33,7 @@ MovieResultList.propTypes = {
       id: PropTypes.string.isRequired,
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
-      url: PropTypes.string.isRequired,
+      poster: PropTypes.string.isRequired,
       genre: PropTypes.string.isRequired,
       release: PropTypes.string.isRequired,
       rating: PropTypes.string.isRequired

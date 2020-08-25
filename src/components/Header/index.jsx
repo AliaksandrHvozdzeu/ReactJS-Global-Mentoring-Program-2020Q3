@@ -1,15 +1,12 @@
 import React from 'react';
-import Wrapper from '../Wrapper';
 import Search from '../SearchPanel';
-import Brand from '../Brand';
 import './style.css';
+import MoviePreview from '../MoviePreview';
 
-const Header = () => (
-  <header>
-    <Wrapper>
-      <Brand/>
-      <Search/>
-    </Wrapper>
+const Header = ({ details, closePreview, onFilterByName, filterByName }) => (
+  <header id="header">
+    {details && <MoviePreview details={details} closePreview={closePreview}/>}
+    {!details && <Search filterByName={filterByName} onFilterByName={onFilterByName}/>}
   </header>
 );
 
