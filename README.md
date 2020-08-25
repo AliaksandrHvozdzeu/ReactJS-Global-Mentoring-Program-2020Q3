@@ -1,6 +1,6 @@
-##ReactJS Global Mentoring Program 2020Q3 [IDeveloper]
+**ReactJS Global Mentoring Program 2020Q3 [IDeveloper]**
 
-###[Live movies.mycloud.by](http://movies.mycloud.by/)
+[Live movies.mycloud.by](http://movies.mycloud.by/)
 
 _Definition_
 
