@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Content from '../components/Content';
@@ -11,7 +12,7 @@ const Home = ({ results }) => {
   const [filter, setFilter] = useState({
     genre: null,
     order: 'release',
-    searchString: ''
+    searchString: '',
   });
 
   useEffect(() => {
@@ -41,12 +42,21 @@ const Home = ({ results }) => {
 
   return (
     <>
-      <Header filterByName={filter.searchString} onFilterByName={onFilterByName}/>
-      <Content searchResults={filtered} onFilterByGenre={onFilterByGenre} onSorting={onSorting}/>
+      <Header filterByName={filter.searchString}
+              onFilterByName={onFilterByName}
+              closePreview=""
+              details=""/>
+      <Content searchResults={filtered}
+               onFilterByGenre={onFilterByGenre}
+               onSorting={onSorting}/>
       <Footer/>
     </>
   );
 
+};
+
+Home.propTypes = {
+  results: PropTypes.string.isRequired,
 };
 
 export default Home;

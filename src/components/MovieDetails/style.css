@@ -45,26 +45,6 @@
   transform: translateY(-5px);
 }
 
-.movie-preview-rating-yellow {
-  font-size: 1.5rem;
-  color: #eee50f;
-  border-radius: 50%;
-  padding: 1rem;
-  border: 2px solid var(--grey);
-  display: inline-block;
-  transform: translateY(-5px);
-}
-
-.movie-preview-rating-red {
-  font-size: 1.5rem;
-  color: var(--red);
-  border-radius: 50%;
-  padding: 1rem;
-  border: 2px solid var(--grey);
-  display: inline-block;
-  transform: translateY(-5px);
-}
-
 .movie-preview-genres {
   color: var(--white);
   margin-bottom: 1.5rem;
