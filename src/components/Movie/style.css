@@ -1,20 +1,19 @@
 .movie-result-item {
   color: var(--white);
-}
-
-.movie-result-item {
   display: flex;
   flex-direction: column;
   justify-content: start;
   position: relative;
+  width: 370px;
 }
 
-.movie-result-item:hover .movie__menu {
+.movie-result-item:hover .movie-menu {
   display: inline-block;
 }
 
 .movie-logo {
   height: 500px;
+  cursor: pointer;
 }
 
 .movie-description {
@@ -36,7 +35,7 @@
 
 .movie-genre {
   font-size: 1rem;
-  color: #8d8d8d;
+  color: #c1b8b8;
 }
 
 .movie-release {

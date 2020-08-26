@@ -30,3 +30,39 @@ button {
     cursor: pointer;
 }
 
+input[type="date"]::-webkit-inner-spin-button {
+    opacity: 0
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background: url(/images/calendar.png) center/80% no-repeat;
+    color: rgba(0, 0, 0, 0);
+    opacity: 0.5
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+    background: url(/images/calendar.png) center/80% no-repeat;
+    opacity: 0.8
+}
+
+input[type="date"]::-webkit-datetime-edit-day-field:focus,
+input[type="date"]::-webkit-datetime-edit-month-field:focus,
+input[type="date"]::-webkit-datetime-edit-year-field:focus {
+    background-color: var(--red);
+}
+
+input[type="password"]:focus {
+    outline: none !important;
+    border: 1px solid var(--red);
+}
+
+input[type="email"]:focus {
+    outline: none !important;
+    border: 1px solid var(--red);
+}
+
+input:focus {
+    outline: none !important;
+    border: 1px solid var(--red);
+}
+

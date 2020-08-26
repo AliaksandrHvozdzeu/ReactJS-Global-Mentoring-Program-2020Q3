@@ -1,0 +1,16 @@
+.login-window-action {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+
+.login-modal {
+    height: 22rem;
+}
+
+.mandatory {
+    color: var(--white);
+    font-size: 13px;
+    margin-top: 20px;
+}
