@@ -35,13 +35,13 @@ export default function Movie({ details }) {
   };
 
   const closePreview = () => {
-    render(<Header closePreview="" details="" filterByName="" onFilterByName=""/>, document.getElementById('header'));
+    render(<Header closePreview="" details="" filterByName="" onFilterByName="" blur={false}/>, document.getElementById('header'));
   };
 
   const movieDetail = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     render(<Header details={details} closePreview={closePreview} filterByName=""
-                   onFilterByName=""/>, document.getElementById('header'));
+                   onFilterByName="" blur={true}/>, document.getElementById('header'));
   };
 
   const showMovieLogo = (poster, alt) => {
