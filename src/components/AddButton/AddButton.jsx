@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './style.css';
-import Modal from 'react-modal';
+import MovieModal from '../MovieModal';
 import MovieAdd from '../MovieAdd';
+import './style.css';
+
 
 export default function AddButton() {
 
@@ -18,16 +19,7 @@ export default function AddButton() {
   return (
     <div className="App">
       <button type="button" className="add-button" onClick={openModal}>+ ADD MOVIE</button>
-      <Modal isOpen={isOpen}
-             onRequestClose={openModal}
-             className="add-movie-modal"
-             overlayClassName="add-movie-modal-overlay"
-             shouldCloseOnOverlayClick={false}
-      >
-        <div>
-          <MovieAdd closeAction={closeModal} modalTitle="ADD MOVIE"/>
-        </div>
-      </Modal>
+      <MovieModal isOpen={isOpen} openModal={openModal} modalContent={<MovieAdd closeAction={closeModal} modalTitle="ADD MOVIE"/>}/>
     </div>
   );
 }

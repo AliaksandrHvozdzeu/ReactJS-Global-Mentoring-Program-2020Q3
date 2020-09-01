@@ -56,7 +56,7 @@ const Home = ({ results }) => {
 };
 
 Home.propTypes = {
-  results: PropTypes.string.isRequired,
+  results: PropTypes.array.isRequired,
 };
 
 export default Home;

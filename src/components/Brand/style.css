@@ -9,10 +9,32 @@
     position: relative;
     font-weight: 300;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .brand-title-name {
     font-weight: 800;
     text-decoration: none;
     color: var(--red);
+    cursor: pointer;
+}
+
+@-webkit-keyframes pulsate {
+    50% {
+        color: #e06d6d;
+        text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #e81924, 0 0 8px #ef8f8f;
+    }
+}
+
+@keyframes pulsate {
+    50% {
+        color: #e06d6d;
+        text-shadow: 0 -1px rgba(0, 0, 0, .3), 0 0 5px #e81924, 0 0 8px #ef8f8f;
+    }
+}
+
+#blink {
+    text-shadow: 0 -1px rgba(0, 0, 0, .1);
+    -webkit-animation: pulsate 3.2s linear infinite;
+    animation: pulsate 3.2s linear infinite;
 }

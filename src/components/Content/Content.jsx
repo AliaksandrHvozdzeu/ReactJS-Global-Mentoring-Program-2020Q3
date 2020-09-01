@@ -5,25 +5,29 @@ import ErrorBoundary from '../ErrorBoundary';
 import Filter from '../MovieFilter';
 import './style.css';
 
-const SearchResults = React.lazy(() => import('../SearchResults/SearchResults'));
+export default function Content({ searchResults, onFilterByGenre, onSorting }) {
 
-const Content = ({ searchResults, onFilterByGenre, onSorting }) => (
-  <main>
-    <ErrorBoundary>
-      <Wrapper>
-        <Filter onFilterByGenre={onFilterByGenre} onSorting={onSorting}/>
-        <React.Suspense fallback={<h3>Loading... Please wait.</h3>}>
-          <SearchResults searchResults={searchResults}/>
-        </React.Suspense>
-      </Wrapper>
-    </ErrorBoundary>
-  </main>
-);
+  const SearchResults = React.lazy(() => import('../SearchResults'));
+
+  return (
+    <>
+      <main>
+        <ErrorBoundary>
+          <Wrapper>
+            <Filter onFilterByGenre={onFilterByGenre} onSorting={onSorting}/>
+            <React.Suspense fallback={<h3>Loading... Please wait.</h3>}>
+              <SearchResults searchResults={searchResults}/>
+            </React.Suspense>
+          </Wrapper>
+        </ErrorBoundary>
+      </main>
+    </>
+  );
+
+}
 
 Content.propTypes = {
-  searchResults: PropTypes.func.isRequired,
+  searchResults: PropTypes.array.isRequired,
   onFilterByGenre: PropTypes.func.isRequired,
   onSorting: PropTypes.func.isRequired,
 };
-
-export default Content;

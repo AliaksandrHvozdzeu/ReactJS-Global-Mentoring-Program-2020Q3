@@ -93,12 +93,12 @@ export default function Movie({ details }) {
 
 Movie.propTypes = {
   details: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
-    genres: PropTypes.string.isRequired,
+    genres: PropTypes.array.isRequired,
     release: PropTypes.string.isRequired,
-    runtime: PropTypes.string.isRequired,
-    rating: PropTypes.string.isRequired,
+    runtime: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
   }).isRequired,
 };

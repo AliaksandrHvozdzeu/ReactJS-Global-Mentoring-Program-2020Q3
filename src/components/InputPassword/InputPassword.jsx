@@ -3,22 +3,23 @@ import PropTypes from 'prop-types';
 import Constants from '../../constants';
 import './style.css';
 
-const InputPassword = ({ title }) => {
+export default function InputPassword({ title }) {
 
   const [showPassword, setShowPassword] = React.useState(false);
-
-  const validate = () => {
-
-  };
+  const LOGIN_PASSWORD_ID = 'login-password';
 
   const handle = () => {
     if (showPassword) {
-      document.getElementById('login-password').type = 'text';
+      document.getElementById(LOGIN_PASSWORD_ID).type = 'text';
       setShowPassword(false);
     } else {
-      document.getElementById('login-password').type = 'password';
+      document.getElementById(LOGIN_PASSWORD_ID).type = 'password';
       setShowPassword(true);
     }
+  };
+
+  const validate = () => {
+
   };
 
   return (
@@ -37,11 +38,8 @@ const InputPassword = ({ title }) => {
     </>
   );
 
-
-};
+}
 
 InputPassword.propTypes = {
   title: PropTypes.string.isRequired,
 };
-
-export default InputPassword;
