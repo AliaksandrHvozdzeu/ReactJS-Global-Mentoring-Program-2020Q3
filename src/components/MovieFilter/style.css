@@ -1,13 +1,13 @@
 .filter-list {
+    --white: #ffffff;
     color: var(--white);
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
     margin: 0 0;
     padding: 0 0;
     box-sizing: border-box;
-    height: 4rem;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     position: relative;
 }
 
