@@ -12,11 +12,12 @@ html {
     --red-lighter: #fb6672;
     --red-darker: #e62b3a;
     --grey: #555555;
-    --grey-transparent: #55555570;
+    --grey-transparent: rgba(85, 85, 85, 0.44);
     --grey-lighter-transparent: #70707070;
     --grey-darker: #232323;
     --white: #ffffff;
     --grey-darker-transparent: #232323d7;
+    --black-darker-transparent: rgb(21 20 20 / 93%);
 }
 
 body {

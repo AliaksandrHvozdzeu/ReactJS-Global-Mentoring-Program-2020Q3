@@ -1,1 +1,1 @@
-#Movie preview component
+#Movie no poster component

@@ -5,12 +5,13 @@ module.exports = Object.freeze({
     { label: 'Horror', value: 'Horror' },
     { label: 'Crime', value: 'Crime' },
   ],
+  FILTER_DEFAULT : [
+    {label: 'release', value: 'release'},
+    {label: 'runtime', value: 'runtime'}
+  ],
   MAPPING: {
     'release date': 'release',
-    runtime: 'runtime',
-    budget: 'budget',
-    revenue: 'revenue',
-    'vote average': 'vote_average',
+    runtime: 'runtime'
   },
   FILTERS: ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'],
   SORTING: ['Release', 'Runtime'],

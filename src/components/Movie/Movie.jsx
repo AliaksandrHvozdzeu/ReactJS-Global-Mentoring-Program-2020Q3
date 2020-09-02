@@ -7,6 +7,7 @@ import MovieEdit from '../MovieEdit';
 import MovieDelete from '../MovieDelete';
 import Header from '../Header';
 import Constants from '../../constants';
+import UseDefaultPoster from '../../utils/useDefaultPoster';
 import './style.css';
 
 export default function Movie({ details }) {
@@ -35,13 +36,13 @@ export default function Movie({ details }) {
   };
 
   const closePreview = () => {
-    render(<Header closePreview="" details="" filterByName="" onFilterByName=""/>, document.getElementById('header'));
+    render(<Header closePreview="" details="" filterByName="" onFilterByName="" blur={false}/>, document.getElementById('header'));
   };
 
   const movieDetail = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     render(<Header details={details} closePreview={closePreview} filterByName=""
-                   onFilterByName=""/>, document.getElementById('header'));
+                   onFilterByName="" blur={true}/>, document.getElementById('header'));
   };
 
   const showMovieLogo = (poster, alt) => {
@@ -52,7 +53,7 @@ export default function Movie({ details }) {
   return (
     <>
       <div className="movie-result-item movie">
-        {showMovieLogo(details.poster, 'not found movie poster')}
+        {showMovieLogo(details.poster, 'movie poster')}
         <div className="movie-description">
           <button type="button"
                   className="movie-title"
@@ -93,12 +94,12 @@ export default function Movie({ details }) {
 
 Movie.propTypes = {
   details: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     poster: PropTypes.string.isRequired,
-    genres: PropTypes.string.isRequired,
+    genres: PropTypes.array.isRequired,
     release: PropTypes.string.isRequired,
-    runtime: PropTypes.string.isRequired,
-    rating: PropTypes.string.isRequired,
+    runtime: PropTypes.number.isRequired,
+    rating: PropTypes.number.isRequired,
   }).isRequired,
 };

@@ -30,13 +30,13 @@ const MovieResultList = ({ results }) => (
 MovieResultList.propTypes = {
   results: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       poster: PropTypes.string.isRequired,
-      genre: PropTypes.string.isRequired,
+      genres: PropTypes.array.isRequired,
       release: PropTypes.string.isRequired,
-      rating: PropTypes.string.isRequired
+      rating: PropTypes.number.isRequired
     }).isRequired
   ).isRequired
 };

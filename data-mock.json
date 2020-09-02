@@ -4,7 +4,8 @@
     "title": "Pulp Fiction",
     "genres": [
       "Action",
-      "Adventure"
+      "Adventure",
+      "Crime"
     ],
     "description": "Pulp Fiction is a 1994 American neo-noir black comedy crime drama film written and directed by Quentin Tarantino, who conceived it with Roger Avary. Starring John Travolta, Samuel L. Jackson, Bruce Willis, Tim Roth, Ving Rhames, and Uma Thurman, it tells several stories of criminal Los Angeles.",
     "poster": "/images/pulp_fiction.jpg",
@@ -18,7 +19,8 @@
     "genres": [
       "Drama",
       "Biography",
-      "Romance"
+      "Romance",
+      "Documentary"
     ],
     "description": "Bohemian Rhapsody is a foot-stomping celebration of Queen, their music and their extraordinary lead singer Freddie Mercury. ... Bohemian Rhapsody is a movie based on the true story of Queen's journey from the start of the rock band to their now-legendary 1985 performance at the Live Aid concert in Wembley Stadium.",
     "poster": "/images/rapsody.jpg",
@@ -31,7 +33,8 @@
     "title": "Kill Bill: Vol2",
     "genres": [
       "Drama",
-      "Romance"
+      "Romance",
+      "Crime"
     ],
     "description": "Quentin Tarantino's \"Kill Bill, Volume 2\" is an exuberant celebration of moviemaking, coasting with heedless joy from one audacious chapter to another, working as irony, working as satire, working as drama, working as pure action.",
     "poster": "/images/kill_bill_2.jpg",

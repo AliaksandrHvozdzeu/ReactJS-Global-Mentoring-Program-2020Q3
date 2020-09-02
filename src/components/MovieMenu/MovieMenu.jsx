@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './style.css';
 
+
 const MenuClosed = ({ action }) => (
   <button type="button" className="movie-menu movie-menu-closed" onClick={() => action(true)}>
     <div className="movie-menu-button"/>

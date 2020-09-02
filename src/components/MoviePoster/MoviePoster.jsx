@@ -1,23 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NoPoster from '../MovieNoPoster';
+import Constants from '../../constants';
+import UseDefaultPoster from '../../utils/useDefaultPoster';
 import './style.css';
 
-function showPoster(src, alt) {
-  if (!src) {
-    return <NoPoster/>;
-  }
-  return <img className="poster" src={src} alt={alt}/>;
+export default function MoviePoster({ src, alt, className }) {
+  return UseDefaultPoster(src, alt, className);
 }
-
-const MoviePoster = ({ src, alt }) => (
-  showPoster(src, alt)
-);
 
 MoviePoster.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string,
-  width: PropTypes.number
+  className: PropTypes.string,
 };
 
-export default MoviePoster;
+MoviePoster.defaultProps = {
+  src: Constants.NOT_FOUND_POSTER,
+  alt: 'movie poster logo',
+  className: 'poster',
+};

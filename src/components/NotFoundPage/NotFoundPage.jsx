@@ -1,12 +1,14 @@
 import React from 'react';
 import './style.css';
 
-const NotFoundPage = () => (
-  <>
-    <section className="page-no-results">
-      PAGE NOT FOUND
-    </section>
-  </>
-)
+export default function NotFoundPage() {
 
-export default NotFoundPage;
+  return (
+    <>
+      <section className="page-no-results">
+        PAGE NOT FOUND
+      </section>
+    </>
+  );
+
+}

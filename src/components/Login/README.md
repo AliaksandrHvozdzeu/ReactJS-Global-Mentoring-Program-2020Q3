@@ -1,1 +1,1 @@
-#Login modal window component
+#Login component
