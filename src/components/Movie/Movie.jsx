@@ -7,6 +7,7 @@ import MovieEdit from '../MovieEdit';
 import MovieDelete from '../MovieDelete';
 import Header from '../Header';
 import Constants from '../../constants';
+import UseDefaultPoster from '../../utils/useDefaultPoster';
 import './style.css';
 
 export default function Movie({ details }) {
@@ -52,7 +53,7 @@ export default function Movie({ details }) {
   return (
     <>
       <div className="movie-result-item movie">
-        {showMovieLogo(details.poster, 'not found movie poster')}
+        {showMovieLogo(details.poster, 'movie poster')}
         <div className="movie-description">
           <button type="button"
                   className="movie-title"
