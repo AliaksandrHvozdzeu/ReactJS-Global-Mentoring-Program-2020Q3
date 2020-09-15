@@ -1,3 +1,3 @@
-import MovieDetails from './MovieDetails';
+import MovieDetails from './js/MovieDetails';
 
 export default MovieDetails;

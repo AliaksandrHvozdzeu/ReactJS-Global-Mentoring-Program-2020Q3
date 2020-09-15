@@ -1,3 +1,3 @@
-import SearchResults from './SearchResults';
+import SearchResults from './js/SearchResults';
 
 export default SearchResults;

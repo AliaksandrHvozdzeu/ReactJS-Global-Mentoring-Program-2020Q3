@@ -1,3 +1,3 @@
-import Wrapper from './Wrapper';
+import Wrapper from './js/Wrapper';
 
 export default Wrapper;

@@ -1,3 +1,3 @@
-import MovieFilter from './MovieFilter';
+import MovieFilter from './js/MovieFilter';
 
 export default MovieFilter;

@@ -1,3 +1,3 @@
-import MovieResultList from './MovieResultList';
+import MovieResultList from './js/MovieResultList';
 
 export default MovieResultList;

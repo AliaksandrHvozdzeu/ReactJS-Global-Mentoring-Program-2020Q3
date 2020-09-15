@@ -1,3 +1,3 @@
-import MovieAdd from './MovieAdd';
+import MovieAdd from './js/MovieAdd';
 
 export default MovieAdd;

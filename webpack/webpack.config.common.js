@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.jsx',
@@ -47,6 +48,7 @@ module.exports = {
         { from: './public/images', to: 'images' },
       ],
     }),
+    new Dotenv(),
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

@@ -1,3 +1,3 @@
-import MovieActionMessage from './MovieActionMessage';
+import MovieActionMessage from './js/MovieActionMessage';
 
 export default MovieActionMessage;

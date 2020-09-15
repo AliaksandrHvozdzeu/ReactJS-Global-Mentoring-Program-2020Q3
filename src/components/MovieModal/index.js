@@ -1,3 +1,3 @@
-import MovieModal from './MovieModal';
+import MovieModal from './js/MovieModal';
 
 export default MovieModal;

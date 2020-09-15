@@ -1,3 +1,3 @@
-import MovieSorting from './MovieSorting';
+import MovieSorting from './js/MovieSorting';
 
 export default MovieSorting;

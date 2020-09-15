@@ -1,0 +1,19 @@
+.scroll-button {
+    position: fixed;
+    color: var(--white);
+    left: 13px;
+    bottom: 85px;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--red);
+    border-radius: 50%;
+    background-color: var(--red);
+}
+
+.scroll-button:hover {
+    background-color: var(--red-lighter);
+    border: 2px solid var(--red-lighter);
+}

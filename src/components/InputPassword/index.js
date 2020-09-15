@@ -1,3 +1,3 @@
-import InputPassword from './InputPassword';
+import InputPassword from './js/InputPassword';
 
 export default InputPassword;
