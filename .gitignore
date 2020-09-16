@@ -58,4 +58,4 @@ dist/
 .eslintcache
 
 # dotenv environment variables file
-.env
+#.env
