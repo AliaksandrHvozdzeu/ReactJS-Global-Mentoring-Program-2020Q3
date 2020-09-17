@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MultiSelect from 'react-multi-select-component';
 import Constants from '../../../constants';
 import '../css/MultiSelectInput.css';
+import ErrorMessage from '../../ErrorMessage';
 
 const ArrowRenderer = ({ expanded }) => (expanded ?
   <img className="arrow" src={Constants.ARROWS[0]} alt="arrow_up"/> :
@@ -10,7 +11,7 @@ const ArrowRenderer = ({ expanded }) => (expanded ?
 
 const buildValues = (elems) => elems.map((e) => ({ label: e, value: e }));
 
-export default function MultiSelectInput({ title, options, preselected, onAction }) {
+export default function MultiSelectInput({ title, options, preselected, onAction, onBlur, error }) {
 
   const selected = buildValues(preselected) || [];
 
@@ -25,8 +26,10 @@ export default function MultiSelectInput({ title, options, preselected, onAction
           value={selected}
           onChange={onAction}
           hasSelectAll={false}
-          labelledBy="malty"/>
+          labelledBy="malty"
+          onBlur={onBlur}/>
       </label>
+      <ErrorMessage error={error}/>
     </>
   );
 
@@ -34,6 +37,8 @@ export default function MultiSelectInput({ title, options, preselected, onAction
 
 ArrowRenderer.propTypes = {
   expanded: PropTypes.bool.isRequired,
+  error: PropTypes.string,
+  onBlur: PropTypes.func,
 };
 
 MultiSelectInput.propTypes = {

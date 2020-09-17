@@ -28,3 +28,12 @@
   color: #B7B7B7;
   text-transform: capitalize;
 }
+
+.input-error {
+  font-size: 0.8rem;
+  font-weight: 100;
+  color: var(--white);
+  text-transform: none;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}

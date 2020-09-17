@@ -11,6 +11,7 @@ const useDefaultPoster = (src, alt, className, fallback, onClick, onKeyDown) => 
   return (
     <>
       <img className={className}
+           role="presentation"
            src={path}
            alt={alt}
            onError={replaceToFallPoster}
