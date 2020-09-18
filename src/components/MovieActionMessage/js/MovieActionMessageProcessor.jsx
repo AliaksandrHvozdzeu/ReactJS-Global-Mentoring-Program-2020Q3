@@ -1,6 +1,6 @@
 import React from 'react';
-import MovieActionMessage from '../index';
 import PropTypes from 'prop-types';
+import MovieActionMessage from '../index';
 import Constants from '../../../constants';
 
 export default function MovieActionMessageProcessor({ modalWindow, isOpen, methodType }) {
@@ -64,6 +64,13 @@ export default function MovieActionMessageProcessor({ modalWindow, isOpen, metho
 }
 
 MovieActionMessageProcessor.propTypes = {
-  status: PropTypes.string,
+  modalWindow: PropTypes.string,
+  isOpen: PropTypes.bool.isRequired,
   methodType: PropTypes.string,
 };
+
+MovieActionMessageProcessor.defaultProps = {
+  modalWindow: null,
+  methodType: null,
+}
+

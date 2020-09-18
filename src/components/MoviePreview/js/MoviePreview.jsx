@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { render } from 'react-dom';
 import MovieDetails from '../../MovieDetails';
 import Brand from '../../Brand';
-import img from '../../../../public/images/search_42.png';
-import { render } from 'react-dom';
+// eslint-disable-next-line import/no-cycle
 import Header from '../../Header';
+import img from '../../../../public/images/search_42.png';
 import '../css/MoviePreview.css';
 
 export default function MoviePreview({ details }) {
@@ -36,5 +37,12 @@ export default function MoviePreview({ details }) {
 }
 
 MoviePreview.propTypes = {
-  details: PropTypes.func.isRequired,
+  details: PropTypes.shape({
+    title: PropTypes.string,
+    vote_average: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    release_date: PropTypes.string,
+    runtime: PropTypes.number,
+    overview: PropTypes.string,
+  }).isRequired,
 };

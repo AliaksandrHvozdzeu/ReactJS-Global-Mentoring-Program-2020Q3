@@ -48,7 +48,9 @@ const movieReducer = (state = initialState, action) => {
     }
     case Constants.CLEAR_SEARCH_INPUT_TYPE: {
       const { movies, total } = action.payload;
+      // eslint-disable-next-line no-param-reassign
       state.movies = [];
+      // eslint-disable-next-line no-param-reassign
       state.offset = 0;
       const newMovieList = [...state.movies, ...movies];
       const offset = state.offset + movies.length;

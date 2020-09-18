@@ -34,11 +34,11 @@ export default function Movie({ details }) {
   const movieDetail = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     const header = document.getElementById('header');
-    render(<Header details={details} blur={true}/>, header);
+    render(<Header details={details} blur/>, header);
   };
 
   const shortText = (title) => {
-    return title.length > 30 ? title.substr(0, 30) + ('...') : title;
+    return title.length > 30 ? `${title.substr(0, 30)  }...` : title;
   };
 
   return (
@@ -95,7 +95,7 @@ Movie.propTypes = {
     id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
-    genres: PropTypes.array.isRequired,
+    genres: PropTypes.arrayOf(PropTypes.string),
     release_date: PropTypes.string.isRequired,
     runtime: PropTypes.number.isRequired,
   }).isRequired,

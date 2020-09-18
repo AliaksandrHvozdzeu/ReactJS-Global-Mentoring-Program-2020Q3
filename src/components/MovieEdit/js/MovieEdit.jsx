@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { movieActions } from '../../../store/actions';
 import Constants from '../../../constants';
-import '../css/MovieEdit.css';
 import MovieEditForm from './MovieEditForm';
+import '../css/MovieEdit.css';
 
 const MovieEdit = ({ modalTitle, closeAction, initialState = {}, onSubmit }) => {
 
@@ -27,7 +27,15 @@ const MovieEdit = ({ modalTitle, closeAction, initialState = {}, onSubmit }) => 
 MovieEdit.propTypes = {
   modalTitle: PropTypes.string.isRequired,
   closeAction: PropTypes.func.isRequired,
-  initialState: PropTypes.object.isRequired,
+  initialState: PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    title: PropTypes.string,
+    release_date: PropTypes.string,
+    poster_path: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    overview: PropTypes.string,
+    runtime: PropTypes.number,
+  }),
   onSubmit: PropTypes.func.isRequired,
 };
 

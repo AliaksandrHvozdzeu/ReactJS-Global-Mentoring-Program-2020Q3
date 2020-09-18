@@ -117,7 +117,7 @@ export const onClearSearch = (data) => ({
   payload: data,
 });
 
-export const loadMoviesAfterCLearSearch = () => (dispatch, getState) => {
+export const loadMoviesAfterClearSearch = () => (dispatch, getState) => {
   dispatch(commonActions.loader(true));
   movieService
     .getMovies({

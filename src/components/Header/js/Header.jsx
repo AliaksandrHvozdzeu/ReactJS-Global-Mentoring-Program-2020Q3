@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SearchPanel from '../../SearchPanel';
-import MoviePreview from '../../MoviePreview';
-import '../css/Header.css';
 import { Provider } from 'react-redux';
+import SearchPanel from '../../SearchPanel';
+// eslint-disable-next-line import/no-cycle
+import MoviePreview from '../../MoviePreview';
 import store from '../../../store';
+import '../css/Header.css';
 
 export default function Header({ details, blur }) {
 
@@ -23,5 +24,5 @@ export default function Header({ details, blur }) {
 
 Header.propTypes = {
   details: PropTypes.string.isRequired,
-  blur: PropTypes.string.isRequired,
+  blur: PropTypes.bool.isRequired,
 };

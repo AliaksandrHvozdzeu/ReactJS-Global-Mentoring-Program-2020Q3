@@ -31,12 +31,11 @@ Input.propTypes = {
   value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string,
-  type: PropTypes.string,
-  error: PropTypes.string,
-  onBlur: PropTypes.func,
+  type: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };
 
 Input.defaultProps = {
-  value: '',
   name: '',
 }

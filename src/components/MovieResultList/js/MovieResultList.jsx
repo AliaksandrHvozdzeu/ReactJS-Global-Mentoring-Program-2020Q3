@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Movie from '../../Movie';
 import SearchResultCount from './SearchResultCount';
-import { connect } from 'react-redux';
 import '../css/MovieResultList.css';
 
 const MovieResultList = ({ movies }) => {
@@ -16,7 +16,7 @@ const MovieResultList = ({ movies }) => {
       <SearchResultCount count={movies.length}/>
       <div className="movie-result-list">
         {movies.map((movieDetails) => (
-          <Movie key={movieDetails.id + '_' + getExtraRandomID()} details={movieDetails}/>
+          <Movie key={`${movieDetails.id  }_${  getExtraRandomID()}`} details={movieDetails}/>
         ))}
       </div>
     </section>

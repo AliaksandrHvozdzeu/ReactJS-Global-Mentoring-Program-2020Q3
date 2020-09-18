@@ -17,7 +17,14 @@ const MovieDelete = ({ modalTitle, closeAction, onMovieDeletion, details }) => {
 };
 
 MovieDelete.propTypes = {
-  details: PropTypes.object.isRequired,
+  details: PropTypes.shape({
+    title: PropTypes.string,
+    vote_average: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    release_date: PropTypes.string,
+    runtime: PropTypes.number,
+    overview: PropTypes.string,
+  }).isRequired,
   modalTitle: PropTypes.string.isRequired,
   closeAction: PropTypes.func.isRequired,
   onMovieDeletion: PropTypes.func.isRequired,

@@ -33,7 +33,14 @@ const MovieDeleteForm = ({ closeAction, modalTitle, onMovieDeletion, details }) 
 MovieDeleteForm.propTypes = {
   closeAction: PropTypes.func.isRequired,
   modalTitle: PropTypes.string.isRequired,
-  details: PropTypes.object.isRequired,
+  details: PropTypes.shape({
+    title: PropTypes.string,
+    vote_average: PropTypes.string,
+    genres: PropTypes.arrayOf(PropTypes.string),
+    release_date: PropTypes.string,
+    runtime: PropTypes.number,
+    overview: PropTypes.string,
+  }).isRequired,
   onMovieDeletion: PropTypes.func.isRequired,
 };
 

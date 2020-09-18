@@ -1,15 +1,15 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import AddButton from '../../AddButton';
 import Brand from '../../Brand';
 import Wrapper from '../../Wrapper';
-import { connect } from 'react-redux';
 import { movieActions } from '../../../store/actions';
 import '../css/SearchPanel.css';
 
 let searchValue = null;
 
-const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
+const SearchPanel = ({ onSearch, loadMoviesAfterClearSearch }) => {
 
   const [searchString, setSearchString] = useState('');
   const [isMessageFrame, setIsMessageFrame] = useState(false);
@@ -28,20 +28,16 @@ const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
   };
 
   const handleSearch = () => {
-    if (searchValue === '' || searchValue === null || searchValue === undefined) {
-      return (
-        <button type="button" className="search-button" onClick={showMessage}>Search</button>
-      );
-    } else {
-      return (
-        <button type="button" className="search-button" onClick={onSearch}>Search</button>
-      );
-    }
+    return searchValue === '' || searchValue === null || searchValue === undefined ? (
+      <button type="button" className="search-button" onClick={showMessage}>Search</button>
+    ) : (
+      <button type="button" className="search-button" onClick={onSearch}>Search</button>
+    );
   };
 
   const onClearSearchField = (target) => {
     if (target.value === '') {
-      loadMoviesAfterCLearSearch();
+      loadMoviesAfterClearSearch();
     }
   };
 
@@ -70,7 +66,9 @@ const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
               {handleSearch()}
               <AddButton/>
               {isMessageFrame && (
-                <div className="search-input-message" onClick={() => setIsMessageFrame(false)}>
+                <div role="presentation"
+                     className="search-input-message"
+                     onClick={() => setIsMessageFrame(false)}>
                   Please enter the part of title or full title of the movie to search!
                 </div>
               )}
@@ -84,13 +82,11 @@ const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
 };
 
 SearchPanel.propTypes = {
-  filterByName: PropTypes.string,
   onSearch: PropTypes.func.isRequired,
+  loadMoviesAfterClearSearch: PropTypes.func.isRequired,
 };
 
-SearchPanel.defaultProps = {
-  filterByName: '',
-};
+SearchPanel.defaultProps = {};
 
 const mapStateToProps = (state) => ({
   movies: state.searchString,
@@ -99,7 +95,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   onSearch: () => dispatch(movieActions.getMovieByTitle(searchValue)),
   loadMoviesDefault: () => dispatch(movieActions.loadMoviesDefault()),
-  loadMoviesAfterCLearSearch: () => dispatch(movieActions.loadMoviesAfterCLearSearch()),
+  loadMoviesAfterClearSearch: () => dispatch(movieActions.loadMoviesAfterClearSearch()),
 });
 
 

@@ -24,5 +24,5 @@ export default function MovieModal({ isOpen, openModal, modalContent }) {
 MovieModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   openModal: PropTypes.func.isRequired,
-  modalContent: PropTypes.object.isRequired,
+  modalContent: PropTypes.string.isRequired,
 };

@@ -1,5 +1,6 @@
 import Constants from '../../../constants';
 
+// eslint-disable-next-line import/prefer-default-export
 export const error = (err) => ({
   type: Constants.ERROR_TYPE,
   payload: err.message,

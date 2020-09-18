@@ -38,9 +38,9 @@ const Home = ({ movies, common, filters, onFilterMovies }) => {
               blur=""/>
       <MovieSection/>
       <Footer/>
-      {<MovieActionMessageProcessor modalWindow={common.modalWindow}
+      <MovieActionMessageProcessor modalWindow={common.modalWindow}
                                     isOpen={common.showMessage}
-                                    methodType={common.methodType}/>}
+                                    methodType={common.methodType}/>
       <ScrollButton/>
       {common.loader && <MovieLoadMessage/>}
     </>
@@ -48,10 +48,28 @@ const Home = ({ movies, common, filters, onFilterMovies }) => {
 };
 
 Home.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+      title: PropTypes.string,
+      release_date: PropTypes.string,
+      url: PropTypes.string,
+      genre: PropTypes.arrayOf(PropTypes.string),
+      overview: PropTypes.string,
+      runtime: PropTypes.number,
+    }),
+  ).isRequired,
   onFilterMovies: PropTypes.func.isRequired,
   common: PropTypes.shape({
     modalWindow: PropTypes.string,
+    methodType: PropTypes.string,
     loader: PropTypes.bool,
+    showMessage: PropTypes.bool,
+  }).isRequired,
+  filters: PropTypes.shape({
+    searchString: PropTypes.string,
+    order: PropTypes.string,
+    genre: PropTypes.string,
   }).isRequired,
 };
 
