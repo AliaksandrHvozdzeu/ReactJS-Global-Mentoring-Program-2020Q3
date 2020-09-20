@@ -1,3 +1,3 @@
-import MultiSelectInput from './MultiSelectInput';
+import MultiSelectInput from './js/MultiSelectInput';
 
 export default MultiSelectInput;

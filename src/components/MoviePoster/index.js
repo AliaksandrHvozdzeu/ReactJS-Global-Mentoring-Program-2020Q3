@@ -1,3 +1,3 @@
-import MoviePoster from './MoviePoster';
+import MoviePoster from './js/MoviePoster';
 
 export default MoviePoster;

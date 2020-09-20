@@ -1,62 +1,68 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Content from '../components/Content';
-import Constants from '../constants';
+import MovieSection from '../components/MovieSection';
+import MovieActionMessageProcessor from '../components/MovieActionMessage/js/MovieActionMessageProcessor';
+import ScrollButton from '../components/ScrollButton';
+import MovieLoadMessage from '../components/MovieLoadMessage';
+import { movieActions } from '../store/actions';
 
-const Home = ({ results }) => {
-
-  const ALL_GENRES = Constants.FILTERS[0];
-  const [filtered, setFilteredResults] = useState(results);
-  const [filter, setFilter] = useState({
-    genre: null,
-    order: 'release',
-    searchString: '',
-  });
+const Home = ({ movies, common, filters, onFilterMovies }) => {
 
   useEffect(() => {
-    const { searchString, order, genre } = filter;
-    const pattern = new RegExp(searchString);
-    setFilteredResults(
-      results
-        .filter((movie) => genre === null || movie.genres.indexOf(genre) !== -1)
-        .filter((movie) => pattern.test(movie.title.toLowerCase()))
-        .sort((f, s) => {
-          return f[order] > s[order] ? 1 : -1;
-        }),
-    );
-  }, [filter, results]);
-
-  const onFilterByGenre = (genre) => {
-    setFilter({ ...filter, genre: genre === ALL_GENRES ? null : genre });
-  };
-
-  const onSorting = (sortingField) => {
-    setFilter({ ...filter, order: Constants.MAPPING[sortingField.toLowerCase()] });
-  };
-
-  const onFilterByName = (query) => {
-    setFilter({ ...filter, searchString: query.toLowerCase() });
-  };
+    const { searchString, order, genre } = filters;
+    const pattern = new RegExp(searchString, 'gi');
+    const filteredResults = movies
+      .filter(
+        (movie) =>
+          genre === null ||
+          genre.toLowerCase() === 'all' ||
+          movie.genres.indexOf(genre) !== -1,
+      )
+      .filter((movie) => pattern.test(movie.title.toLowerCase()))
+      .sort((f, s) => {
+        if (f[order] > s[order]) {
+          return 1;
+        }
+        return -1;
+      });
+    onFilterMovies(filteredResults);
+  }, [movies, filters, onFilterMovies]);
 
   return (
     <>
-      <Header filterByName={filter.searchString}
-              onFilterByName={onFilterByName}
-              closePreview=""
-              details=""/>
-      <Content searchResults={filtered}
-               onFilterByGenre={onFilterByGenre}
-               onSorting={onSorting}/>
+      <Header closePreview=""
+              details=""
+              blur=""/>
+      <MovieSection/>
       <Footer/>
+      {<MovieActionMessageProcessor modalWindow={common.modalWindow}
+                                    isOpen={common.showMessage}
+                                    methodType={common.methodType}/>}
+      <ScrollButton/>
+      {common.loader && <MovieLoadMessage/>}
     </>
   );
-
 };
 
 Home.propTypes = {
-  results: PropTypes.array.isRequired,
+  onFilterMovies: PropTypes.func.isRequired,
+  common: PropTypes.shape({
+    modalWindow: PropTypes.string,
+    loader: PropTypes.bool,
+  }).isRequired,
 };
 
-export default Home;
+const mapStateToProps = (state) => ({
+  movies: state.movies.movies,
+  filters: state.filters,
+  common: state.common,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onFilterMovies: (movies) => dispatch(movieActions.filteredMovies(movies)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

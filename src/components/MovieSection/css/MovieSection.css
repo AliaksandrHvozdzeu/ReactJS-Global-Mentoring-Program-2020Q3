@@ -1,0 +1,10 @@
+main{
+    min-height: 56vh;
+    background-color: var(--grey-darker);
+    overflow: hidden;
+}
+
+
+.load {
+    color: var(--white);
+}

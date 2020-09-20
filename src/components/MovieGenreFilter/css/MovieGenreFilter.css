@@ -1,0 +1,40 @@
+.genre-filter-item button {
+  text-transform: uppercase;
+}
+
+.genre-filter-item:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.genre-filter-item, .genre-filter-item button {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--white);
+  position: relative;
+  background-color: transparent;
+  font-size: 1.2rem;
+  outline: none;
+  line-height: 4rem;
+}
+
+.genre-filter-item button:hover::after, .genre-filter-item button.active::after {
+  position: absolute;
+  content: '';
+  border-bottom: 3px solid var(--red);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  border-radius: 1px;
+}
+
+select.genre-filter {
+  background-color: var(--grey-darker);
+  color: var(--white);
+  font-size: 1.2rem;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  top: 20px;
+}

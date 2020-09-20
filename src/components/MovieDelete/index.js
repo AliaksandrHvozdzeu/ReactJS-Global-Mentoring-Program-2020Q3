@@ -1,3 +1,3 @@
-import MovieDelete from './MovieDelete';
+import MovieDelete from './js/MovieDelete';
 
 export default MovieDelete;

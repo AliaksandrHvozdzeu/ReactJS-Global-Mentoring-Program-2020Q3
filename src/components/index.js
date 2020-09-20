@@ -1,9 +1,9 @@
 import Header from './Header';
-import Content from './Content';
+import MovieSection from './MovieSection';
 import Footer from './Footer';
 
 export {
   Header,
-  Content,
+  MovieSection,
   Footer
 };

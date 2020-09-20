@@ -1,18 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux'
 import { HomePage } from './containers';
+import store from './store';
 import './App.css';
-import data from '../data-mock.json';
 
-export default () => {
+const App = () => (
+  <Provider store={store}>
+    <HomePage />
+  </Provider>
+);
 
-  const [state] = useState({
-    results: data,
-  });
-
-  return (
-    <>
-      <HomePage preview={state.preview} results={state.results}/>
-    </>
-  );
-
-};
+export default App;

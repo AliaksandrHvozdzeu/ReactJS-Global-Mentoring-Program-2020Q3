@@ -1,0 +1,20 @@
+footer {
+    background-color: #424242;
+    color: var(--red);
+    height: 7vh;
+    font-size: 1.5rem;
+    position: sticky;
+    z-index: 5;
+}
+
+.app-title {
+    font-weight: 200;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.app-title-name {
+    font-weight: 800;
+}

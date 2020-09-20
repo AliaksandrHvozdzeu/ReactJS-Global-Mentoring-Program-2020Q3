@@ -1,3 +1,3 @@
-import ErrorBoundary from './ErrorBoundary';
+import ErrorBoundary from './js/ErrorBoundary';
 
 export default ErrorBoundary;

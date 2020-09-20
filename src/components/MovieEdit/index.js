@@ -1,3 +1,3 @@
-import MovieEdit from './MovieEdit';
+import MovieEdit from './js/MovieEdit';
 
 export default MovieEdit;
