@@ -1,8 +1,5 @@
 **ReactJS Global Mentoring Program 2020Q3 [IDeveloper]**
 
-
-![image](https://drive.google.com/uc?export=view&id=1uF-msYAFZWSjw3S6StYta8qPeW6feZwX)
-
 [Live movies.mycloud.by](http://movies.mycloud.by/)
 
 _Definition_

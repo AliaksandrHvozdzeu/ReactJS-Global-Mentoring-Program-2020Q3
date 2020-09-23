@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ErrorMessage from '../../ErrorMessage';
 
-export default function Calendar({ id, title, value, onChange, name, type }) {
+export default function Calendar({ id, title, value, onChange, name, type, onBlur, error }) {
 
   return (
     <>
@@ -12,8 +13,10 @@ export default function Calendar({ id, title, value, onChange, name, type }) {
                type={type}
                name={name}
                value={value}
-               onChange={onChange}/>
+               onChange={onChange}
+               onBlur={onBlur}/>
       </label>
+      <ErrorMessage error={error}/>
     </>
   );
 
@@ -26,6 +29,8 @@ Calendar.propTypes = {
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string,
   type: PropTypes.string,
+  error: PropTypes.string,
+  onBlur: PropTypes.func,
 };
 
 Calendar.defaultProps = {

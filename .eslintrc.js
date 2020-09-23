@@ -17,6 +17,7 @@ module.exports = {
     "react"
   ],
   "rules": {
-    "import/no-dynamic-require": "off"
+    "import/no-dynamic-require": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   }
 };

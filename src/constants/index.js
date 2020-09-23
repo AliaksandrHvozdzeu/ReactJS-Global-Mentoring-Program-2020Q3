@@ -51,4 +51,13 @@ module.exports = Object.freeze({
     src: './images/scroll_arrow_up.png',
     alt: 'scroll button up',
   }],
+  FORMIK_ERRORS: [{
+    title: 'Title is required field',
+    release_date: 'Release date is required field',
+    poster_path: 'Poster should be a valid url',
+    genre: 'Select at least one genre',
+    overview: 'Film description is required',
+    runtime: 'Runtime should be numeric value more then 0'
+  }],
+  DEFAULT_DATE_FORMAT: 'MM/dd/yyyy',
 });

@@ -9,21 +9,6 @@
   width: 2rem;
   height: 2rem;
   z-index: 1;
-  transform: rotate(135deg);
-}
-
-.close-button:hover {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background-color: transparent;
-  color: transparent;
-  border: transparent;
-  outline: none;
-  width: 2rem;
-  height: 2rem;
-  z-index: 1;
-  transform: rotate(90deg);
 }
 
 .close-button::before {

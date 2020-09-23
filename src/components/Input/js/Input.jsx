@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../css/Input.css';
+import ErrorMessage from '../../ErrorMessage';
 
-export default function Input({ id, title, visibility, value, onChange, name, type }) {
+export default function Input({ id, title, visibility, value, onChange, name, type, onBlur, error }) {
 
   return (
     <>
@@ -15,8 +16,9 @@ export default function Input({ id, title, visibility, value, onChange, name, ty
                name={name}
                readOnly={false}
                onChange={onChange}
-               required/>
+               onBlur={onBlur}/>
       </label>
+      <ErrorMessage error={error}/>
     </>
   );
 
@@ -30,6 +32,8 @@ Input.propTypes = {
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string,
   type: PropTypes.string,
+  error: PropTypes.string,
+  onBlur: PropTypes.func,
 };
 
 Input.defaultProps = {
