@@ -9,12 +9,15 @@ import '../css/Header.css';
 
 export default function Header({ details, blur }) {
 
+  const buildPreview = () => {
+    return details ? <MoviePreview details={details}/> : <SearchPanel/>;
+  };
+
   return (
     <>
       <Provider store={store}>
         <header id="header" className={blur ? 'blurred' : ''}>
-          {details && <MoviePreview details={details}/>}
-          {!details && <SearchPanel/>}
+          {buildPreview()}
         </header>
       </Provider>
     </>
@@ -25,4 +28,7 @@ export default function Header({ details, blur }) {
 Header.propTypes = {
   details: PropTypes.string.isRequired,
   blur: PropTypes.bool.isRequired,
+  location: PropTypes.shape({
+    search: PropTypes.string,
+  }).isRequired,
 };

@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import MovieSection from '../components/MovieSection';
-import MovieActionMessageProcessor from '../components/MovieActionMessage/js/MovieActionMessageProcessor';
-import ScrollButton from '../components/ScrollButton';
-import MovieLoadMessage from '../components/MovieLoadMessage';
-import { movieActions } from '../store/actions';
+import Header from '../../Header';
+import Footer from '../../Footer';
+import MovieSection from '../../MovieSection';
+import MovieActionMessageProcessor from '../../MovieActionMessage/js/MovieActionMessageProcessor';
+import ScrollButton from '../../ScrollButton';
+import MovieLoadMessage from '../../MovieLoadMessage';
+import { movieActions } from '../../../store/actions';
 
 const Home = ({ movies, common, filters, onFilterMovies }) => {
 
@@ -23,7 +23,10 @@ const Home = ({ movies, common, filters, onFilterMovies }) => {
       )
       .filter((movie) => pattern.test(movie.title.toLowerCase()))
       .sort((f, s) => {
-        return f[order] > s[order] ? 1 : -1;
+        if (f[order] > s[order]) {
+          return 1;
+        }
+        return -1;
       });
     onFilterMovies(filteredResults);
   }, [movies, filters, onFilterMovies]);
@@ -36,14 +39,13 @@ const Home = ({ movies, common, filters, onFilterMovies }) => {
       <MovieSection/>
       <Footer/>
       <MovieActionMessageProcessor modalWindow={common.modalWindow}
-                                    isOpen={common.showMessage}
-                                    methodType={common.methodType}/>
+                                   isOpen={common.showMessage}
+                                   methodType={common.methodType}/>
       <ScrollButton/>
       {common.loader && <MovieLoadMessage/>}
     </>
   );
 };
-
 Home.propTypes = {
   movies: PropTypes.arrayOf(
     PropTypes.shape({
@@ -69,15 +71,12 @@ Home.propTypes = {
     genre: PropTypes.string,
   }).isRequired,
 };
-
 const mapStateToProps = (state) => ({
   movies: state.movies.movies,
   filters: state.filters,
   common: state.common,
 });
-
 const mapDispatchToProps = dispatch => ({
   onFilterMovies: (movies) => dispatch(movieActions.filteredMovies(movies)),
 });
-
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

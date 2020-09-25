@@ -1,18 +1,32 @@
-.page-no-results {
-
+.page-not-found {
+    background-color: #121212;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.page-not-found > * {
+    margin: 1rem 0;
 }
 
+.page-not-found-title {
+    color: var(--white);
+    font-weight: 100;
+    font-size: 3rem;
+    letter-spacing: 0.2rem;
+    text-transform: capitalize;
+}
+
+
 .back-button {
-    color: var(--grey-lighter-transparent);
+    color: var(--red);
     background-color: var(--grey-transparent);
     text-transform: uppercase;
     padding: 1rem 1rem;
     border-radius: 4px;
     font-size: 1rem;
     outline: none;
-    position: absolute;
-    right: 0;
-    top: 1rem;
 }
 
 .back-button:hover {
