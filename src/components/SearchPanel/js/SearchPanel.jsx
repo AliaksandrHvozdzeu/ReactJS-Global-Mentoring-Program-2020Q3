@@ -6,10 +6,13 @@ import Brand from '../../Brand';
 import Wrapper from '../../Wrapper';
 import { movieActions } from '../../../store/actions';
 import '../css/SearchPanel.css';
+import { useHistory } from 'react-router';
 
 let searchValue = null;
 
 const SearchPanel = ({ onSearch, loadMoviesAfterClearSearch }) => {
+
+  const history = useHistory();
 
   const [searchString, setSearchString] = useState('');
   const [isMessageFrame, setIsMessageFrame] = useState(false);
@@ -40,6 +43,13 @@ const SearchPanel = ({ onSearch, loadMoviesAfterClearSearch }) => {
       loadMoviesAfterClearSearch();
     }
   };
+
+  const onGoToSearch = useCallback(
+    (searchString) => history.push(`/search?query=${searchString}`),
+    [history],
+  );
+
+  console.log(history.location.search);
 
   return (
     <>

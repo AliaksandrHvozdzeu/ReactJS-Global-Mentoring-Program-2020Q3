@@ -20,13 +20,11 @@ const App = () => (
         <Route exact path="/404" component={NotFoundPage}>
           <NotFoundPage BackLink={BackLink}/>
         </Route>
-        {/*<Route exact path="/search" component={NotFoundPage}>*/}
-        {/*  <NotFoundPage BackLink={BackLink}/>*/}
-        {/*</Route>*/}
         <Route path="/" component={Home}/>
       </Switch>
     </Router>
   </Provider>
 );
+
 
 export default App;

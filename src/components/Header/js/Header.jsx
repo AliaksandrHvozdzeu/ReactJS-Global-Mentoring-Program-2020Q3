@@ -9,7 +9,7 @@ import '../css/Header.css';
 
 export default function Header({ details, blur }) {
 
-  const buildPreview = () => {
+  const buildHeader = () => {
     return details ? <MoviePreview details={details}/> : <SearchPanel/>;
   };
 
@@ -17,7 +17,7 @@ export default function Header({ details, blur }) {
     <>
       <Provider store={store}>
         <header id="header" className={blur ? 'blurred' : ''}>
-          {buildPreview()}
+          {buildHeader()}
         </header>
       </Provider>
     </>
@@ -28,7 +28,4 @@ export default function Header({ details, blur }) {
 Header.propTypes = {
   details: PropTypes.string.isRequired,
   blur: PropTypes.bool.isRequired,
-  location: PropTypes.shape({
-    search: PropTypes.string,
-  }).isRequired,
 };

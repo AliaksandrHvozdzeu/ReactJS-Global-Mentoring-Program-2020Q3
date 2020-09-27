@@ -23,10 +23,7 @@ const Home = ({ movies, common, filters, onFilterMovies }) => {
       )
       .filter((movie) => pattern.test(movie.title.toLowerCase()))
       .sort((f, s) => {
-        if (f[order] > s[order]) {
-          return 1;
-        }
-        return -1;
+        return f[order] > s[order] ? 1 : -1;
       });
     onFilterMovies(filteredResults);
   }, [movies, filters, onFilterMovies]);
