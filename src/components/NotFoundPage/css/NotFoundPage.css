@@ -17,22 +17,3 @@
     letter-spacing: 0.2rem;
     text-transform: capitalize;
 }
-
-
-.back-button {
-    color: var(--red);
-    background-color: var(--grey-transparent);
-    text-transform: uppercase;
-    padding: 1rem 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
-    outline: none;
-}
-
-.back-button:hover {
-    background-color: var(--grey-lighter-transparent);
-}
-
-.back-button:active {
-    background-color: var(--grey);
-}

@@ -38,6 +38,7 @@ module.exports = Object.freeze({
   PREVIEW_MOVIE_TYPE: 'movies/preview',
   UPDATE_GENRES_TYPE: 'genres/updateGenres',
   LOADER_TYPE: 'common/loader',
+  MOVIE_PREVIEW: 'movies/preview',
   ERROR_TYPE: 'common/error',
   RESET_TYPE: 'common/reset',
   PUT_METHOD: 'put',

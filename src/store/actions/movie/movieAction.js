@@ -130,3 +130,17 @@ export const loadMoviesAfterClearSearch = () => (dispatch, getState) => {
     .catch((err) => dispatch(commonActions.error(err)))
     .finally(() => dispatch(dispatch(commonActions.loader(false))));
 };
+
+export const moviePreview = (payload) => ({
+  type: Constants.MOVIE_PREVIEW,
+  payload,
+});
+
+export const getMovieById = (id) => (dispatch) => {
+  dispatch(commonActions.loader(true));
+  movieService
+    .getMovieById(id)
+    .then((data) => dispatch(moviePreview(data)))
+    .catch((err) => dispatch(commonActions.error(err)))
+    .finally(() => dispatch(commonActions.loader(false)));
+};

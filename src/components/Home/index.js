@@ -1,4 +1,4 @@
-import Home from './js/Home';
+import HomeContainer from './js/Home.container';
 
 // eslint-disable-next-line import/prefer-default-export
-export default Home;
+export default HomeContainer;

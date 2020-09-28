@@ -56,6 +56,9 @@ const movieReducer = (state = initialState, action) => {
       const offset = state.offset + movies.length;
       return { ...state, movies: newMovieList, total, offset };
     }
+    case Constants.MOVIE_PREVIEW: {
+      return { ...state, preview: action.payload };
+    }
     default: {
       return state;
     }

@@ -8,6 +8,7 @@ import {
   loadMoviesDefault,
   loadMoviesAfterClearSearch,
   moviesLoaded,
+  getMovieById,
 } from './movieAction';
 
 export default {
@@ -20,4 +21,5 @@ export default {
   loadMoviesDefault,
   loadMoviesAfterClearSearch,
   filteredMovies,
+  getMovieById,
 };

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { render } from 'react-dom';
+import { useHistory } from 'react-router';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import MovieMenu from '../../MovieMenu';
@@ -12,6 +13,7 @@ import '../css/Movie.css';
 
 export default function Movie({ details }) {
 
+  const history = useHistory();
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
 
@@ -32,13 +34,14 @@ export default function Movie({ details }) {
   };
 
   const movieDetail = () => {
+    history.push(`/movies/${details.id}`);
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
     const header = document.getElementById('header');
     render(<Header details={details} blur/>, header);
   };
 
   const shortText = (title) => {
-    return title.length > 30 ? `${title.substr(0, 30)  }...` : title;
+    return title.length > 30 ? `${title.substr(0, 30)}...` : title;
   };
 
   return (
