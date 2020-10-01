@@ -6,7 +6,7 @@ import {
   getMovieByTitle,
   loadMovies,
   loadMoviesDefault,
-  loadMoviesAfterClearSearch,
+  onClearSearch,
   moviesLoaded,
   getMovieById,
 } from './movieAction';
@@ -19,7 +19,7 @@ export default {
   editMovie,
   getMovieByTitle,
   loadMoviesDefault,
-  loadMoviesAfterClearSearch,
+  onClearSearch,
   filteredMovies,
   getMovieById,
 };

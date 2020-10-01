@@ -4,6 +4,7 @@ const initialState = {
   loader: false,
   modalWindow: null,
   showMessage: false,
+  redirect: false,
 };
 
 const notificationReducer = (state = initialState, action) => {
@@ -13,6 +14,7 @@ const notificationReducer = (state = initialState, action) => {
       return {
         ...state,
         loader: action.payload,
+        redirect: false,
       };
     }
     case Constants.ERROR_TYPE: {
@@ -21,6 +23,7 @@ const notificationReducer = (state = initialState, action) => {
         modalWindow: Constants.ERROR,
         methodType: action.methodType,
         showMessage: true,
+        redirect: true,
       };
     }
     case Constants.EDIT_MOVIE_SUCCESS_TYPE: {
@@ -50,6 +53,7 @@ const notificationReducer = (state = initialState, action) => {
         modalWindow: null,
         methodType: null,
         showMessage: false,
+        redirect: false,
       };
     }
   }

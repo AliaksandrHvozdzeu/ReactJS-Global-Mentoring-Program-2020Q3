@@ -1,14 +1,10 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { movieActions } from '../../../store/actions';
 import '../css/LoadMoreButton.css';
 
 const LoadMoreButton = ({ loadMovies }) => {
-
-  useEffect(() => {
-    loadMovies();
-  }, [loadMovies]);
 
   const onLoadMovies = useCallback(() => {
     loadMovies();

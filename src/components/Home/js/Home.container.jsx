@@ -1,24 +1,27 @@
-import React, { useCallback, useEffect } from 'react';
-import { Redirect, Route, Switch, useHistory, useRouteMatch } from 'react-router';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import Home from './Home';
-import { movieActions } from '../../../store/actions';
+import React, { useEffect } from "react";
+import { Redirect, Route, Switch, useRouteMatch } from "react-router";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import Home from "./Home";
+import { movieActions } from "../../../store/actions";
 
 const HomeContainer = ({ common, movies, filters, onFilterMovies }) => {
 
   const { path } = useRouteMatch();
-  const history = useHistory();
+
+  if (common != null && common.redirect) {
+    return (<Redirect to="/404" />);
+  }
 
   useEffect(() => {
     const { searchString, order, genre } = filters;
-    const pattern = new RegExp(searchString, 'gi');
+    const pattern = new RegExp(searchString, "gi");
     const filteredResults = movies
       .filter(
         (movie) =>
           genre === null ||
-          genre.toLowerCase() === 'all' ||
-          movie.genres.indexOf(genre) !== -1,
+          genre.toLowerCase() === "all" ||
+          movie.genres.indexOf(genre) !== -1
       )
       .filter((movie) => pattern.test(movie.title.toLowerCase()))
       .sort((f, s) => {
@@ -27,20 +30,15 @@ const HomeContainer = ({ common, movies, filters, onFilterMovies }) => {
     onFilterMovies(filteredResults);
   }, [movies, filters, onFilterMovies]);
 
-  const onGoToSearch = useCallback(
-    (searchString) => history.push(`/search?query=${searchString}`),
-    [history],
-  );
-
   return (
     <Switch>
       <Route exact path={`${path}movies/:id`}>
-        <Home common={common} onGoToSearch={onGoToSearch}/>
+        <Home common={common} movies={movies} />
       </Route>
       <Route exact path={[path, `${path}search`]}>
-        <Home common={common} />
+        <Home common={common} movies={movies} />
       </Route>
-      <Redirect to="/404"/>
+      <Redirect to="/404" />
     </Switch>
   );
 
@@ -55,8 +53,8 @@ HomeContainer.propTypes = {
       url: PropTypes.string,
       genre: PropTypes.arrayOf(PropTypes.string),
       overview: PropTypes.string,
-      runtime: PropTypes.number,
-    }),
+      runtime: PropTypes.number
+    })
   ).isRequired,
   onFilterMovies: PropTypes.func.isRequired,
   common: PropTypes.shape({
@@ -64,22 +62,23 @@ HomeContainer.propTypes = {
     methodType: PropTypes.string,
     loader: PropTypes.bool,
     showMessage: PropTypes.bool,
+    redirect: PropTypes.bool,
   }).isRequired,
   filters: PropTypes.shape({
     searchString: PropTypes.string,
     order: PropTypes.string,
-    genre: PropTypes.string,
-  }).isRequired,
+    genre: PropTypes.string
+  }).isRequired
 };
 
 const mapDispatchToProps = (dispatch) => ({
-  onFilterMovies: (movies) => dispatch(movieActions.filteredMovies(movies)),
+  onFilterMovies: (movies) => dispatch(movieActions.filteredMovies(movies))
 });
 
 const mapStateToProps = (state) => ({
   movies: state.movies.movies,
   filters: state.filters,
-  common: state.common,
+  common: state.common
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);

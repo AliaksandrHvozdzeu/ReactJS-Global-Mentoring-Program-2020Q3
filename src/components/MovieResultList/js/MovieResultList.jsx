@@ -1,9 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Movie from '../../Movie';
-import SearchResultCount from './SearchResultCount';
-import '../css/MovieResultList.css';
+import React from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import Movie from "../../Movie";
+import SearchResultCount from "./SearchResultCount";
+import "../css/MovieResultList.css";
+import NotFoundMovie from "../../NotFoundMovie";
 
 const MovieResultList = ({ movies }) => {
 
@@ -11,15 +12,32 @@ const MovieResultList = ({ movies }) => {
     return Math.floor(Math.random() * Math.floor(1000));
   };
 
+  const isMoviesNotFound = () => {
+    if (movies.length === 0) {
+      return (
+        <section className="movie-result">
+          <NotFoundMovie />
+        </section>
+      );
+    }
+    return (
+      <>
+        <section className="movie-result">
+          <SearchResultCount count={movies.length} />
+          <div className="movie-result-list">
+            {movies.map((movieDetails) => (
+              <Movie key={`${movieDetails.id}_${getExtraRandomID()}`} details={movieDetails} />
+            ))}
+          </div>
+        </section>
+      </>
+    );
+  };
+
   return (
-    <section className="movie-result">
-      <SearchResultCount count={movies.length}/>
-      <div className="movie-result-list">
-        {movies.map((movieDetails) => (
-          <Movie key={`${movieDetails.id  }_${  getExtraRandomID()}`} details={movieDetails}/>
-        ))}
-      </div>
-    </section>
+    <>
+      {isMoviesNotFound()}
+    </>
   );
 
 };
@@ -33,11 +51,11 @@ MovieResultList.propTypes = {
       poster_path: PropTypes.string.isRequired,
       genres: PropTypes.arrayOf(PropTypes.string),
       release_date: PropTypes.string.isRequired,
-      vote_average: PropTypes.number,
-    }).isRequired,
-  ).isRequired,
+      vote_average: PropTypes.number
+    }).isRequired
+  ).isRequired
 };
 
-const mapStateToProps = (state) => ({ movies: state.movies.filteredResults });
+const mapStateToProps = (state) => ({ movies: state.movies.movies });
 
 export default connect(mapStateToProps, null)(MovieResultList);

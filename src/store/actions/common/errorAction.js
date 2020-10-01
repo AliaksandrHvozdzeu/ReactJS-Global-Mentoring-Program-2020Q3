@@ -7,4 +7,5 @@ export const error = (err) => ({
   modalWindow: 'error',
   methodType: err.config.method,
   showMessage: true,
+  redirect: true,
 });

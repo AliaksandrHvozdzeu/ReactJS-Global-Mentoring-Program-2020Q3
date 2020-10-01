@@ -5,7 +5,7 @@ import MoviePoster from '../../MoviePoster';
 import PosterPreview from '../../PosterPreview/js/PosterPreview';
 import '../css/MovieDetails.css';
 
-export default function MovieDetails({ details }) {
+const MovieDetails = ({ details }) => {
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -48,6 +48,7 @@ export default function MovieDetails({ details }) {
 
 MovieDetails.propTypes = {
   details: PropTypes.shape({
+    id: PropTypes.number,
     title: PropTypes.string,
     vote_average: PropTypes.string,
     genres: PropTypes.arrayOf(PropTypes.string),
@@ -57,4 +58,6 @@ MovieDetails.propTypes = {
     overview: PropTypes.string,
   }).isRequired,
 };
+
+export default MovieDetails;
 
