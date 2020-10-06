@@ -20,12 +20,12 @@ const AddButton = () => {
   );
 
   return (
-    <div className="App">
+    <>
       <button type="button" className="add-button" onClick={openModal}>+ ADD MOVIE</button>
       <MovieModal isOpen={isOpen}
                   openModal={openModal}
                   modalContent={modalContent}/>
-    </div>
+    </>
   );
 };
 

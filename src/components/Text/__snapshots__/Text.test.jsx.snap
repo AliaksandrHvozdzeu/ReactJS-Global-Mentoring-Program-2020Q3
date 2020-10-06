@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Text then snapshot created 1`] = `
+<label
+  htmlFor="test-text-id"
+>
+  Test text title
+  <p
+    className="text"
+    id="test-text-id"
+  >
+    Test text value
+  </p>
+</label>
+`;

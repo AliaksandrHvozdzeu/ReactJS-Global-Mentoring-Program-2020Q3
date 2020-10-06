@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Brand then snapshot created 1`] = `
+<div
+  className="brand"
+>
+  <p
+    className="brand-title"
+  >
+    <a
+      className="brand-title-name"
+      href=" #"
+      id="blink"
+      onClick={[Function]}
+    >
+      netflix
+    </a>
+    roulette
+  </p>
+</div>
+`;
