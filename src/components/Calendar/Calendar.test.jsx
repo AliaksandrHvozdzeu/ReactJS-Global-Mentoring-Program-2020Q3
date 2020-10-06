@@ -11,7 +11,8 @@ describe('when Calendar', () => {
     };
     const name = 'name';
     const type = 'type';
-    const onBlur = true;
+    const onBlur = () => {
+    };
     const error = 'error';
     const component = rerender.create(<Calendar id={id}
                                                 title={title}

@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when CloseButton then snapshot created 1`] = `
+<button
+  aria-label="close"
+  className="close-button"
+  onClick={[Function]}
+  type="button"
+/>
+`;

@@ -1,8 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`when Calendar then snapshot created 1`] = `
+exports[`when Input then snapshot created 1`] = `
 Array [
   <label
+    className="visibility"
     htmlFor="id"
   >
     title
@@ -12,6 +13,7 @@ Array [
       name="name"
       onBlur={[Function]}
       onChange={[Function]}
+      readOnly={false}
       type="type"
       value="value"
     />
