@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when ErrorMessage then snapshot created 1`] = `
+<p
+  className="input-error"
+>
+  Title is required.
+</p>
+`;
