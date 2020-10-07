@@ -11,7 +11,7 @@ export default function Brand() {
     <>
       <div className="brand">
         <p className="brand-title">
-          <a id="blink" className="brand-title-name" onClick={reloadPage}>netflix</a>
+          <a id="blink" className="brand-title-name" href=" #" onClick={reloadPage}>netflix</a>
           roulette
         </p>
       </div>

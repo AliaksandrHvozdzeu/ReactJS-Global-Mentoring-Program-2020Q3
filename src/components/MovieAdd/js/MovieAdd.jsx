@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Constants from '../../../constants';
 import MovieAddForm from './MovieAddForm';
 import { movieActions } from '../../../store/actions';
-import { connect } from 'react-redux';
 import '../css/MovieAdd.css';
 
 const MovieAdd = ({ modalTitle, closeAction, onSubmit }) => {
@@ -27,11 +27,7 @@ const MovieAdd = ({ modalTitle, closeAction, onSubmit }) => {
 MovieAdd.propTypes = {
   modalTitle: PropTypes.string.isRequired,
   closeAction: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func,
-};
-
-MovieAdd.defaultProps = {
-  initialState: {},
+  onSubmit: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({

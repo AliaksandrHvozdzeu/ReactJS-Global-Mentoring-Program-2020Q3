@@ -38,6 +38,7 @@ module.exports = Object.freeze({
   PREVIEW_MOVIE_TYPE: 'movies/preview',
   UPDATE_GENRES_TYPE: 'genres/updateGenres',
   LOADER_TYPE: 'common/loader',
+  MOVIE_PREVIEW: 'movies/preview',
   ERROR_TYPE: 'common/error',
   RESET_TYPE: 'common/reset',
   PUT_METHOD: 'put',
@@ -45,10 +46,10 @@ module.exports = Object.freeze({
   DELETE_METHOD: 'delete',
   SHOW_SUCCESS_MESSAGE: 'common/successMessage',
   ARROW_IMAGES_ARRAY: [{
-    src: './images/scroll_arrow_down.png',
+    src: '../images/scroll_arrow_down.png',
     alt: 'scroll button down',
   }, {
-    src: './images/scroll_arrow_up.png',
+    src: '../images/scroll_arrow_up.png',
     alt: 'scroll button up',
   }],
   FORMIK_ERRORS: [{

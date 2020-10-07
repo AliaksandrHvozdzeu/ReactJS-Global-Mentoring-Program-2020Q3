@@ -148,13 +148,17 @@ MovieBaseForm.propTypes = {
     genres: PropTypes.arrayOf(PropTypes.string),
     overview: PropTypes.string,
     runtime: PropTypes.number,
-  }).isRequired,
+  }),
   availableGenres: PropTypes.arrayOf(
     PropTypes.shape({
       label: PropTypes.string.isRequired,
       value: PropTypes.string.isRequired,
     }),
   ).isRequired,
+};
+
+MovieBaseForm.defaultProps = {
+  initialState: {},
 };
 
 export default MovieBaseForm;

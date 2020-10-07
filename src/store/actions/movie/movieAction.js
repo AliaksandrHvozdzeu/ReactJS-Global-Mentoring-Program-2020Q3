@@ -103,6 +103,7 @@ export const getMovieByTitle = (searchString) => (dispatch) => {
   movieService
     .getMovieBySearchString(searchString)
     .then((data) => dispatch(getMovieBySearchString(data)))
+    .then(() => dispatch(updateGenres()))
     .catch((err) => dispatch(commonActions.error(err)))
     .finally(() => dispatch(dispatch(commonActions.loader(false))));
 };
@@ -112,21 +113,21 @@ export const filteredMovies = (payload) => ({
   payload,
 });
 
-export const onClearSearch = (data) => ({
+export const onClearSearch = () => ({
   type: Constants.CLEAR_SEARCH_INPUT_TYPE,
-  payload: data,
+  payload: null,
 });
 
-export const loadMoviesAfterCLearSearch = () => (dispatch, getState) => {
+export const moviePreview = (payload) => ({
+  type: Constants.MOVIE_PREVIEW,
+  payload,
+});
+
+export const getMovieById = (id) => (dispatch) => {
   dispatch(commonActions.loader(true));
   movieService
-    .getMovies({
-      query: getState().filters.searchString || '',
-      offset: getState().movies.offset || 0,
-      sortBy: getState().filters.order,
-      genre: getState().filters.genre || '',
-    })
-    .then((data) => dispatch(onClearSearch(data)))
+    .getMovieById(id)
+    .then((data) => dispatch(moviePreview(data)))
     .catch((err) => dispatch(commonActions.error(err)))
-    .finally(() => dispatch(dispatch(commonActions.loader(false))));
+    .finally(() => dispatch(commonActions.loader(false)));
 };

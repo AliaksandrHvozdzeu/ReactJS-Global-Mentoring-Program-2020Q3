@@ -22,7 +22,7 @@ const ScrollButton = () => {
   }, [notRef]);
 
   return (
-    <div onClick={scroll} className="scroll-button">
+    <div role="presentation" onClick={scroll} className="scroll-button">
       <img id="image-scroll-button" src={notRef} alt={notAlt} className="scroll-button"/>
     </div>
   );

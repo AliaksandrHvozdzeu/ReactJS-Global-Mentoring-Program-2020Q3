@@ -1,7 +1,7 @@
 import React from 'react';
+import InputEmail from '../../InputEmail';
+import InputPassword from '../../InputPassword';
 import '../css/Login.css';
-import InputEmail from '../InputEmail';
-import InputPassword from '../InputPassword';
 
 export default function Login() {
 

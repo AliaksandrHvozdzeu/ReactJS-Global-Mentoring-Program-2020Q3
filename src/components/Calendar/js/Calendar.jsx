@@ -25,12 +25,12 @@ export default function Calendar({ id, title, value, onChange, name, type, onBlu
 Calendar.propTypes = {
   id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   title: PropTypes.string.isRequired,
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   name: PropTypes.string,
-  type: PropTypes.string,
-  error: PropTypes.string,
-  onBlur: PropTypes.func,
+  type: PropTypes.string.isRequired,
+  error: PropTypes.string.isRequired,
+  onBlur: PropTypes.func.isRequired,
 };
 
 Calendar.defaultProps = {

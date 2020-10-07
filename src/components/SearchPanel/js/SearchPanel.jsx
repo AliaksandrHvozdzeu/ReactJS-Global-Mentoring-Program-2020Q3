@@ -1,26 +1,61 @@
-import React, { useCallback, useState } from 'react';
-import PropTypes from 'prop-types';
-import AddButton from '../../AddButton';
-import Brand from '../../Brand';
-import Wrapper from '../../Wrapper';
-import { connect } from 'react-redux';
-import { movieActions } from '../../../store/actions';
-import '../css/SearchPanel.css';
+import React, { useCallback, useMemo, useState } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import qs from "qs";
+import { createHashHistory } from "history";
+import AddButton from "../../AddButton";
+import Brand from "../../Brand";
+import Wrapper from "../../Wrapper";
+import { movieActions } from "../../../store/actions";
+import "../css/SearchPanel.css";
 
 let searchValue = null;
 
-const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
+const SearchPanel = ({ onSearch, onClearSearch }) => {
 
-  const [searchString, setSearchString] = useState('');
+  const history = createHashHistory();
+  const [searchString, setSearchString] = useState("");
   const [isMessageFrame, setIsMessageFrame] = useState(false);
+
+  const onSetLocalHistorySearchValue = (value) => {
+    localStorage.setItem("searchValue", value);
+  };
+
+  const searchHandler = useCallback(
+    () => {
+      const queryHistory = history.location.search;
+      if (queryHistory) {
+        const searchQuery = qs.parse(queryHistory, {
+          ignoreQueryPrefix: true
+        }).query;
+        if (searchQuery) {
+          setSearchString(searchQuery);
+          searchValue = searchQuery;
+          onSetLocalHistorySearchValue(searchQuery);
+          onSearch();
+        }
+        return searchQuery;
+      }
+      return "";
+    },
+    [searchString]
+  );
+
+  useMemo(() => {
+    if (searchString) {
+      return searchString;
+    }
+    searchHandler();
+    return "";
+  }, [searchString, history.location.search]);
 
   const handleKeyDown = useCallback(
     (event) => {
-      if (event.key === 'Enter') {
+      if (event.key === "Enter") {
         onSearch();
       }
     },
-    [searchString],
+    [searchString]
   );
 
   const showMessage = () => {
@@ -28,27 +63,24 @@ const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
   };
 
   const handleSearch = () => {
-    if (searchValue === '' || searchValue === null || searchValue === undefined) {
-      return (
-        <button type="button" className="search-button" onClick={showMessage}>Search</button>
-      );
-    } else {
-      return (
-        <button type="button" className="search-button" onClick={onSearch}>Search</button>
-      );
-    }
+    return searchValue === "" || searchValue === null || searchValue === undefined ? (
+      <button type="button" className="search-button" onClick={showMessage}>Search</button>
+    ) : (
+      <button type="button" className="search-button" onClick={onSearch}>Search</button>
+    );
   };
 
   const onClearSearchField = (target) => {
-    if (target.value === '') {
-      loadMoviesAfterCLearSearch();
+    if (target.value === "") {
+      onClearSearch();
+      history.push(`/search?query=`);
     }
   };
 
   return (
     <>
       <Wrapper>
-        <Brand/>
+        <Brand />
         <div className="search">
           <label htmlFor="search-field" className="search-title">
             FIND YOUR MOVIE
@@ -63,14 +95,18 @@ const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
                        onClearSearchField(e.target);
                      }}
                      onChange={(e) => {
+                       history.push(`/search?query=${e.target.value}`);
                        searchValue = e.target.value;
                        setSearchString(e.target.value);
+                       onSetLocalHistorySearchValue(e.target.value);
                        setIsMessageFrame(false);
-                     }}/>
+                     }} />
               {handleSearch()}
-              <AddButton/>
+              <AddButton />
               {isMessageFrame && (
-                <div className="search-input-message" onClick={() => setIsMessageFrame(false)}>
+                <div role="presentation"
+                     className="search-input-message"
+                     onClick={() => setIsMessageFrame(false)}>
                   Please enter the part of title or full title of the movie to search!
                 </div>
               )}
@@ -84,22 +120,19 @@ const SearchPanel = ({ onSearch, loadMoviesAfterCLearSearch }) => {
 };
 
 SearchPanel.propTypes = {
-  filterByName: PropTypes.string,
   onSearch: PropTypes.func.isRequired,
+  onClearSearch: PropTypes.func.isRequired
 };
 
-SearchPanel.defaultProps = {
-  filterByName: '',
-};
+SearchPanel.defaultProps = {};
 
 const mapStateToProps = (state) => ({
-  movies: state.searchString,
+  movies: state.searchString
 });
 
 const mapDispatchToProps = (dispatch) => ({
   onSearch: () => dispatch(movieActions.getMovieByTitle(searchValue)),
-  loadMoviesDefault: () => dispatch(movieActions.loadMoviesDefault()),
-  loadMoviesAfterCLearSearch: () => dispatch(movieActions.loadMoviesAfterCLearSearch()),
+  onClearSearch: () => dispatch(movieActions.onClearSearch())
 });
 
 

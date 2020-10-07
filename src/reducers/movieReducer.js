@@ -24,7 +24,8 @@ const movieReducer = (state = initialState, action) => {
     case Constants.LOAD_MOVIES_BY_TITLE_TYPE: {
       const { totalAmount } = action.payload.data;
       const offset = state.offset + action.payload.data.length;
-      return { ...state, movies: action.payload.data.data, totalAmount, offset };
+      const findMovies = action.payload.data.data;
+      return { ...state, movies: findMovies, totalAmount, offset };
     }
     case Constants.DELETE_MOVIES_SUCCESS_TYPE: {
       const result = state.movies.filter((movie) => movie.id !== action.payload);
@@ -47,12 +48,10 @@ const movieReducer = (state = initialState, action) => {
       return { ...state, filteredResults: action.payload };
     }
     case Constants.CLEAR_SEARCH_INPUT_TYPE: {
-      const { movies, total } = action.payload;
-      state.movies = [];
-      state.offset = 0;
-      const newMovieList = [...state.movies, ...movies];
-      const offset = state.offset + movies.length;
-      return { ...state, movies: newMovieList, total, offset };
+      return { ...state, movies: [], genres: ['All'] };
+    }
+    case Constants.MOVIE_PREVIEW: {
+      return { ...state, preview: action.payload };
     }
     default: {
       return state;
