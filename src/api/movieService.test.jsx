@@ -1,183 +1,133 @@
-import { movieService } from "./";
-import axios from "axios";
-import Axios from "axios";
-import { jest } from "@jest/globals";
+import axios from 'axios';
+import { jest } from '@jest/globals';
+import { movieService } from '.';
 
-describe("fetchData", () => {
+describe('fetchData', () => {
 
-  const API = "https://movie-q2020-api.herokuapp.com";
-  jest.mock("axios");
-  Axios.get = jest.fn();
-  Axios.delete = jest.fn();
-  Axios.post = jest.fn();
-  Axios.put = jest.fn();
+  const API = 'https://movie-q2020-api.herokuapp.com';
+  jest.mock('axios');
+  axios.get = jest.fn();
+  axios.delete = jest.fn();
+  axios.post = jest.fn();
+  axios.put = jest.fn();
 
+  const errorMessage = 'Network Error';
+  const query = '';
+  const searchBy = 'title';
+  const limit = 20;
+  const offset = 0;
+  const sortBy = 'title';
+  const sortOrder = 'asc';
+  const genre = [];
+
+  const data = {
+    'id': 181808,
+    'title': 'TEST',
+    'release_date': '2020-10-28',
+    'poster_path': 'https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true',
+    'genres': ['Comedy', 'Crime', 'Documentary', 'Horror'],
+    'runtime': 220,
+    'overview': 'TEST OVER',
+  };
+
+  const responseData = {
+    'title': 'TEST',
+    'release_date': '2020-10-29',
+    'poster_path': 'https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true',
+    'genres': ['Comedy', 'Crime', 'Documentary', 'Horror'],
+    'overview': 'TEST OVER',
+    'runtime': 120,
+    'id': 1602354294588,
+  };
 
   // ADD MOVIE
 
-  it("fetches successfully data from an API for Add Movie", () => {
-    const data = {
-      "title": "TEST",
-      "release_date": "2020-10-28",
-      "poster_path": "https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true",
-      "genres": ["Comedy", "Crime", "Documentary", "Horror"],
-      "runtime": 220,
-      "overview": "TEST OVER"
-    };
-    const responseData = {
-      "title": "TEST",
-      "release_date": "2020-10-29",
-      "poster_path": "https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true",
-      "genres": ["Comedy", "Crime", "Documentary", "Horror"],
-      "overview": "TEST OVER",
-      "runtime": 120,
-      "id": 1602354294588
-    };
+  test('fetches successfully data from an API for Add Movie', () => {
     axios.post(API, data).mockImplementationOnce(() => Promise.resolve(data));
     expect(movieService.addMovie(data)).resolves.toEqual(responseData);
     expect(axios.post).toHaveBeenCalledWith(
-      `${API}/`
+      `${API}/movies`,
     );
   });
 
-  it("fetches erroneously data from an API for Add Movie", () => {
-    const data = {
-      "title": "TEST",
-      "release_date": "2020-10-28",
-      "poster_path": "https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true",
-      "genres": ["Comedy", "Crime", "Documentary", "Horror"],
-      "runtime": 220,
-      "overview": "TEST OVER"
-    };
-    const errorMessage = "Network Error";
+  test('fetches erroneously data from an API for Add Movie', () => {
     axios.post.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage))
+      Promise.reject(new Error(errorMessage)),
     );
     expect(movieService.addMovie(data)).rejects.toThrow(errorMessage);
   });
 
   // DELETE MOVIE
 
-  it("fetches successfully data from an API for Delete Movie", (url) => {
-    const data = {
-      "id": 181808
-    };
-    axios.delete(url).mockImplementationOnce(() => Promise.resolve(data));
+  test('fetches successfully data from an API for Delete Movie', (url) => {
+    axios.delete(url).mockImplementationOnce(() => Promise.resolve(181808));
     expect(movieService.deleteMovie(181808)).resolves.toEqual(null);
     expect(axios.delete).toHaveBeenCalledWith(
-      `${API}/`
+      `${API}/movies/181808`,
     );
   });
 
-  it("fetches erroneously data from an API for Delete Movie", () => {
-    const errorMessage = "Network Error";
+  test('fetches erroneously data from an API for Delete Movie', () => {
     axios.delete.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage))
+      Promise.reject(new Error(errorMessage)),
     );
     expect(movieService.deleteMovie(181808)).rejects.toThrow(errorMessage);
   });
 
   // EDIT MOVIE
 
-  it("fetches successfully data from an API for Edit Movie", () => {
-    const data = {
-      "id": 181808,
-      "title": "TEST",
-      "release_date": "2020-10-28",
-      "poster_path": "https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true",
-      "genres": ["Comedy", "Crime", "Documentary", "Horror"],
-      "runtime": 220,
-      "overview": "TEST OVER"
-    };
-
+  test('fetches successfully data from an API for Edit Movie', () => {
     axios.put(API, data).mockImplementationOnce(() => Promise.resolve(data));
     expect(movieService.editMovie(data)).resolves.toEqual(data);
     expect(axios.put(API, data)).toHaveBeenCalledWith(
-      `${API}/`
+      `${API}/movies`,
     );
   });
 
-  it("fetches erroneously data from an API for Edit Movie", () => {
-    const errorMessage = "Network Error";
-    const data = {
-      "id": 181808,
-      "title": "TEST",
-      "release_date": "2020-10-28",
-      "poster_path": "https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true",
-      "genres": ["Comedy", "Crime", "Documentary", "Horror"],
-      "runtime": 220,
-      "overview": "TEST OVER"
-    };
+  test('fetches erroneously data from an API for Edit Movie', () => {
     axios.put.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage))
+      Promise.reject(new Error(errorMessage)),
     );
     expect(movieService.editMovie(data)).rejects.toThrow(errorMessage);
   });
 
   // DET MOVIE BY ID
 
-  it("fetches successfully data from an API for get movie by id", () => {
-    const data = {
-      "id": 181808,
-      "title": "TEST",
-      "release_date": "2020-10-28",
-      "poster_path": "https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true",
-      "genres": ["Comedy", "Crime", "Documentary", "Horror"],
-      "runtime": 220,
-      "overview": "TEST OVER"
-    };
+  test('fetches successfully data from an API for get movie by id', () => {
     axios.get.mockImplementationOnce(() => Promise.resolve(data));
     expect(movieService.getMovieById(181808)).resolves.toEqual(data);
     expect(axios.get(API)).toHaveBeenCalledWith(
-      `${API}/`
+      `${API}/movies/181808`,
     );
   });
 
-  it("fetches erroneously data from an API for get movie by id", () => {
-    const errorMessage = "Network Error";
+  test('fetches erroneously data from an API for get movie by id', () => {
     axios.get.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage))
+      Promise.reject(new Error(errorMessage)),
     );
     expect(movieService.getMovieById(181808)).rejects.toThrow(errorMessage);
   });
 
   // GET MOVIES BY SEARCH STRING
 
-  it("fetches successfully data from an API for get movie by search string", () => {
+  test('fetches successfully data from an API for get movie by search string', () => {
     axios.get.mockImplementationOnce(() => Promise.resolve(data));
-    expect(movieService.getMovieBySearchString("jedi")).resolves.toEqual(data);
+    expect(movieService.getMovieBySearchString('jedi')).resolves.toEqual(data);
     expect(axios.get(API)).toHaveBeenCalledWith(
-      `${API}/`
+      `${API}/search/jedi`,
     );
   });
 
-  it("fetches erroneously data from an API for get movie by search string", () => {
-    const errorMessage = "Network Error";
+  test('fetches erroneously data from an API for get movie by search string', () => {
     axios.get.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage))
+      Promise.reject(new Error(errorMessage)),
     );
-    expect(movieService.getMovieBySearchString("jedi")).rejects.toThrow(errorMessage);
+    expect(movieService.getMovieBySearchString('jedi')).rejects.toThrow(errorMessage);
   });
 
   // GET MOVIES
 
-  it("fetches successfully data from an API for get movies", () => {
-    const data = {
-      "id": 181808,
-      "title": "TEST",
-      "release_date": "2020-10-28",
-      "poster_path": "https://sway.office.com/s/oO2X5YxlFa2QRDrd/images/DFTY2H4YQuABEo?quality=750&allowAnimation=true",
-      "genres": ["Comedy", "Crime", "Documentary", "Horror"],
-      "runtime": 220,
-      "overview": "TEST OVER"
-    };
-    const query = "";
-    const searchBy = "title";
-    const limit = 20;
-    const offset = 0;
-    const sortBy = "title";
-    const sortOrder = "asc";
-    const genre = [];
+  test('fetches successfully data from an API for get movies', () => {
     axios.get.mockImplementationOnce(() => Promise.resolve(data));
     expect(movieService.getMovies({
       query,
@@ -186,24 +136,16 @@ describe("fetchData", () => {
       offset,
       sortBy,
       sortOrder,
-      genre
+      genre,
     })).resolves.toEqual(data);
     expect(axios.get(API)).toHaveBeenCalledWith(
-      `${API}/`
+      `${API}/`,
     );
   });
 
-  it("fetches erroneously data from an API for get movies", () => {
-    const errorMessage = "Network Error";
-    const query = "";
-    const searchBy = "title";
-    const limit = 20;
-    const offset = 0;
-    const sortBy = "title";
-    const sortOrder = "asc";
-    const genre = [];
+  test('fetches erroneously data from an API for get movies', () => {
     axios.get.mockImplementationOnce(() =>
-      Promise.reject(new Error(errorMessage))
+      Promise.reject(new Error(errorMessage)),
     );
     expect(movieService.getMovies({
       query,
@@ -212,7 +154,7 @@ describe("fetchData", () => {
       offset,
       sortBy,
       sortOrder,
-      genre
+      genre,
     })).rejects.toThrow(errorMessage);
   });
 
