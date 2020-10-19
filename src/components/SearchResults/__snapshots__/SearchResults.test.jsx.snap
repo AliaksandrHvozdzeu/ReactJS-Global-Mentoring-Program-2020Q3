@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when SearchResults then snapshot created 1`] = `
+Array [
+  <div
+    className="modal-window-overlay-message"
+  />,
+  <div
+    className="modal-window"
+  >
+    <div
+      className="modal-window-loader"
+    >
+      Loading... Please wait!
+    </div>
+  </div>,
+]
+`;

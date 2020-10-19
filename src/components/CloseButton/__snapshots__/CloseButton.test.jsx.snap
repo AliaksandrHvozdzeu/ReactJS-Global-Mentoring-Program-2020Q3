@@ -4,7 +4,7 @@ exports[`when CloseButton then snapshot created 1`] = `
 <button
   aria-label="close"
   className="close-button"
-  onClick={[Function]}
+  onClick={[MockFunction]}
   type="button"
 />
 `;

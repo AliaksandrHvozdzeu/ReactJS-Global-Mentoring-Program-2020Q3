@@ -57,8 +57,9 @@ module.exports = Object.freeze({
     release_date: 'Release date is required field',
     poster_path: 'Poster should be a valid url',
     genre: 'Select at least one genre',
-    overview: 'Film description is required',
+    overview: 'Movie description is required',
     runtime: 'Runtime should be numeric value more then 0'
   }],
   DEFAULT_DATE_FORMAT: 'MM/dd/yyyy',
+  DEFAULT_POSTER: '/images/not-found.png',
 });

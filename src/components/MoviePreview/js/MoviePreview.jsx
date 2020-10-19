@@ -4,7 +4,6 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import MovieDetails from "../../MovieDetails";
 import Brand from "../../Brand";
-import img from "../../../../public/images/search_42.png";
 import "../css/MoviePreview.css";
 
 import store from "../../../store";
@@ -35,7 +34,7 @@ export default function MoviePreview({ details }) {
                 type="button"
                 onClick={onClosePreview}
                 onKeyDown={onClosePreview}>
-          <img src={img}
+          <img src="../../../../public/images/search_42.png"
                className="close-preview"
                alt="close preview" />
         </button>
@@ -53,5 +52,5 @@ MoviePreview.propTypes = {
     release_date: PropTypes.string,
     runtime: PropTypes.number,
     overview: PropTypes.string
-  }).isRequired,
+  }).isRequired
 };

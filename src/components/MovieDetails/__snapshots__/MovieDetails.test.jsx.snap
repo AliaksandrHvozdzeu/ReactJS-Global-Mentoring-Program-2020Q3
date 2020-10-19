@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when MovieDetails then poster_path is empty 1`] = `
+Array [
+  <img
+    alt="Movie poster"
+    className="poster"
+    onClick={[Function]}
+    onError={[Function]}
+    role="presentation"
+    src=""
+  />,
+  <div
+    className="movie-preview-description-block"
+  >
+    <h1
+      className="movie-preview-title"
+    />
+    <p
+      className="movie-preview-rating"
+    >
+      2
+    </p>
+    <p
+      className="movie-preview-genres"
+    />
+    <p
+      className="movie-preview-release"
+    >
+      NaN
+    </p>
+    <p
+      className="movie-preview-runtime"
+    />
+    <p
+      className="movie-preview-description"
+    />
+  </div>,
+]
+`;
+
+exports[`when MovieDetails then poster_path is not correct 1`] = `
+<div
+  className="movie-details-not-found"
+>
+  Movie was not found, choose another.
+</div>
+`;
+
+exports[`when MovieDetails then snapshot created when details is null 1`] = `
+Array [
+  <img
+    alt="Movie poster"
+    className="poster"
+    onClick={[Function]}
+    onError={[Function]}
+    role="presentation"
+    src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"
+  />,
+  <div
+    className="movie-preview-description-block"
+  >
+    <h1
+      className="movie-preview-title"
+    >
+      Test
+    </h1>
+    <p
+      className="movie-preview-rating"
+    >
+      0.0
+    </p>
+    <p
+      className="movie-preview-genres"
+    />
+    <p
+      className="movie-preview-release"
+    >
+      2020
+    </p>
+    <p
+      className="movie-preview-runtime"
+    >
+      120
+    </p>
+    <p
+      className="movie-preview-description"
+    >
+      over
+    </p>
+  </div>,
+]
+`;

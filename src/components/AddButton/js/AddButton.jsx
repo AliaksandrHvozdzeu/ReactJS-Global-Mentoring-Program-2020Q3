@@ -7,23 +7,23 @@ const AddButton = () => {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const openModal = () => {
+  const openAddModal = () => {
     setIsOpen(!isOpen);
   };
 
-  const closeModal = () => {
+  const closeAddModal = () => {
     setIsOpen(false);
   };
 
   const modalContent = (
-    <MovieAdd closeAction={closeModal} modalTitle="ADD MOVIE"/>
+    <MovieAdd closeAction={closeAddModal} modalTitle="ADD MOVIE"/>
   );
 
   return (
     <>
-      <button type="button" className="add-button" onClick={openModal}>+ ADD MOVIE</button>
+      <button type="button" className="add-button" onClick={openAddModal}>+ ADD MOVIE</button>
       <MovieModal isOpen={isOpen}
-                  openModal={openModal}
+                  openModal={openAddModal}
                   modalContent={modalContent}/>
     </>
   );

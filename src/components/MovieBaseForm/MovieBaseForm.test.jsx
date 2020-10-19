@@ -1,39 +1,24 @@
-import React from 'react';
-import rerender from 'react-test-renderer';
-import { render, screen } from '@testing-library/react';
-import MovieBaseForm from './js/MovieBaseForm';
+import React from "react";
+import rerender from "react-test-renderer";
+import MovieBaseForm from "./js/MovieBaseForm";
+import { jest } from "@jest/globals";
 
-describe('when MovieBaseForm', () => {
+describe("when MovieBaseForm", () => {
 
-  const onSubmit = () => {
-  };
-  const modalTitle = '';
-  const closeAction = () => {
-  };
+  const onSubmit = jest.fn();
+  const modalTitle = "BASE FORM";
+  const closeAction = jest.fn();
   const initialState = {};
-  const availableGenres = {};
+  const availableGenres = ['All', 'Documentary', 'Comedy', 'Horror', 'Crime'];
 
-  test('then snapshot created', () => {
+  test("then snapshot created", () => {
     const component = rerender.create(<MovieBaseForm onSubmit={onSubmit}
                                                      modalTitle={modalTitle}
                                                      closeAction={closeAction}
                                                      initialState={initialState}
-                                                     availableGenres={availableGenres}/>);
+                                                     availableGenres={availableGenres} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-  });
-
-  test('on empty value', () => {
-    const initialStateTest = {
-      'title': "TEST",
-    };
-    render(<MovieBaseForm onSubmit={onSubmit}
-                          modalTitle={modalTitle}
-                          closeAction={closeAction}
-                          initialState={initialStateTest}
-                          availableGenres={availableGenres}/>);
-    const value = screen.getByText('movie-title');
-    expect(value).toContain('TEST');
   });
 
 });

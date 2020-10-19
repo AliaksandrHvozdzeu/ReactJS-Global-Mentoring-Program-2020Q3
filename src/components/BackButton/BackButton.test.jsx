@@ -12,12 +12,10 @@ describe('when BackButton', () => {
   });
 
   test('then click simulate', () => {
-    const onClick = jest.fn();
     const backButtonComponent = shallow(<BackButton/>);
     backButtonComponent.simulate('click');
     expect(backButtonComponent.text()).toEqual("Back");
     expect(backButtonComponent.hasClass("back-button")).toEqual(true);
-    expect(onClick).toBeCalled();
   });
 
 });

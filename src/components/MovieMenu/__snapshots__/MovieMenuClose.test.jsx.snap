@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when MovieMenuClose then snapshot created 1`] = `
+<button
+  className="movie-menu movie-menu-closed"
+  onClick={[Function]}
+  type="button"
+>
+  <div
+    className="movie-menu-button"
+  />
+</button>
+`;

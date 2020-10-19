@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when PosterPreview then snapshot created 1`] = `
+<div
+  className="poster-preview-overlay"
+>
+  <div
+    className="poster-preview-body"
+  >
+    <section
+      className="congratulation-poster"
+    >
+      <button
+        aria-label="close"
+        className="close-button"
+        onClick={[Function]}
+        type="button"
+      />
+      <img
+        alt="movie poster logo"
+        className="preview-poster-image"
+        onError={[Function]}
+        role="presentation"
+        src="/images/not-found.png"
+      />
+    </section>
+  </div>
+</div>
+`;
+
+exports[`when PosterPreview when scr is not default 1`] = `
+<div
+  className="poster-preview-overlay"
+>
+  <div
+    className="poster-preview-body"
+  >
+    <section
+      className="congratulation-poster"
+    >
+      <button
+        aria-label="close"
+        className="close-button"
+        onClick={[Function]}
+        type="button"
+      />
+      <img
+        alt="movie"
+        className="preview-poster-image"
+        onError={[Function]}
+        role="presentation"
+        src="https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg"
+      />
+    </section>
+  </div>
+</div>
+`;

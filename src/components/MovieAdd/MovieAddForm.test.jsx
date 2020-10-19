@@ -1,6 +1,7 @@
 import React from "react";
 import rerender from "react-test-renderer";
 import MovieAddForm from "./js/MovieAddForm";
+import { jest } from "@jest/globals";
 
 describe("when MovieAddForm", () => {
   test("then snapshot created", () => {
@@ -8,14 +9,12 @@ describe("when MovieAddForm", () => {
     };
     const modalTitle = "";
     const initialState = {};
-    const availableGenres = [];
-    const onSubmit = () => {
-    };
+    const onSubmit = jest.fn();
     const component = rerender.create(<MovieAddForm onSubmit={onSubmit}
                                                     modalTitle={modalTitle}
                                                     closeAction={closeAction}
                                                     initialState={initialState}
-                                                    availableGenres={availableGenres} />);
+                                                    availableGenres={[]} />);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });

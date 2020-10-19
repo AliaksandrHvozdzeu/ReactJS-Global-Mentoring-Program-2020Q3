@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when MovieSorting then snapshot created 1`] = `
+<label
+  className="sorting-title"
+  htmlFor="date-filter"
+>
+  title
+  <select
+    className="sorting-select"
+    id="date-filter"
+    onChange={[Function]}
+    value="All"
+  >
+    <option
+      className="sorting-item"
+      value="All"
+    >
+      All
+    </option>
+    <option
+      className="sorting-item"
+      value="Documentary"
+    >
+      Documentary
+    </option>
+    <option
+      className="sorting-item"
+      value="Comedy"
+    >
+      Comedy
+    </option>
+    <option
+      className="sorting-item"
+      value="Horror"
+    >
+      Horror
+    </option>
+    <option
+      className="sorting-item"
+      value="Crime"
+    >
+      Crime
+    </option>
+  </select>
+</label>
+`;

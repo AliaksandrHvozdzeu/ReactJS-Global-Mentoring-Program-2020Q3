@@ -14,7 +14,7 @@ export default function MovieGenreFilter({ genres, action, active }) {
 
   const onSelect = useCallback(
     (event) => {
-      const { value } = event.target;
+      const value = event.target;
       action(value);
       setActiveGenre(value);
     },

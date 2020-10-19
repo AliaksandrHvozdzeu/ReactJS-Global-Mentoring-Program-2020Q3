@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import UseDefaultPoster from '../../../hooks/useDefaultPoster';
-import defaultPoster from '../../../../public/images/not-found.png';
+import Constants from '../../../constants';
 import '../css/MoviePoster.css';
 
 export default function MoviePoster({ src, alt, className, fallback, onClick, onKeyDown }) {
@@ -17,8 +17,8 @@ MoviePoster.propTypes = {
 };
 
 MoviePoster.defaultProps = {
-  src: defaultPoster,
-  fallback: defaultPoster,
+  src: Constants.DEFAULT_POSTER,
+  fallback: Constants.DEFAULT_POSTER,
   alt: 'movie poster logo',
   className: 'poster',
 };

@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when SearchPanel then snapshot created 1`] = `
+<div
+  className="wrapper unselectable"
+>
+  <div
+    className="brand"
+  >
+    <p
+      className="brand-title"
+    >
+      <a
+        className="brand-title-name"
+        href=" #"
+        id="blink"
+        onClick={[Function]}
+      >
+        netflix
+      </a>
+      roulette
+    </p>
+  </div>
+  <div
+    className="search"
+  >
+    <label
+      className="search-title"
+      htmlFor="search-field"
+    >
+      FIND YOUR MOVIE
+      <div
+        className="search-panel"
+      >
+        <input
+          className="search-field"
+          id="search-field"
+          onChange={[Function]}
+          onInput={[Function]}
+          onKeyDown={[Function]}
+          placeholder="What do you want to watch?"
+          type="search"
+          value=""
+        />
+        <button
+          className="search-button"
+          onClick={[Function]}
+          type="button"
+        >
+          Search
+        </button>
+        <button
+          className="add-button"
+          onClick={[Function]}
+          type="button"
+        >
+          + ADD MOVIE
+        </button>
+      </div>
+    </label>
+  </div>
+</div>
+`;

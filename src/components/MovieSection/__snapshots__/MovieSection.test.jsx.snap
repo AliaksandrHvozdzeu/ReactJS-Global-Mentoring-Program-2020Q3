@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when MovieSection then snapshot created 1`] = `
+<main>
+  <div
+    className="error"
+  >
+    Something went wrong. Please try again later.
+  </div>
+</main>
+`;

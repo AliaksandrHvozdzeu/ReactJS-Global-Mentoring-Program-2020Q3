@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when MovieFilter then snapshot created 1`] = `
+<section
+  className="filter-list"
+>
+  <div
+    className="filter-item filter-by-genre"
+  >
+    <ul
+      className="genre-filter"
+    >
+      <li
+        className="genre-filter-item"
+      >
+        <button
+          className="active"
+          onClick={[Function]}
+          type="button"
+        >
+          Drama
+        </button>
+      </li>
+      <li
+        className="genre-filter-item"
+      >
+        <button
+          className=""
+          onClick={[Function]}
+          type="button"
+        >
+          Romance
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="filter-item filter"
+  >
+    <label
+      className="sorting-title"
+      htmlFor="date-filter"
+    >
+      SORT BY
+      <select
+        className="sorting-select"
+        id="date-filter"
+        onChange={[Function]}
+        value="Release"
+      >
+        <option
+          className="sorting-item"
+          value="Release"
+        >
+          Release
+        </option>
+        <option
+          className="sorting-item"
+          value="Runtime"
+        >
+          Runtime
+        </option>
+        <option
+          className="sorting-item"
+          value="Budget"
+        >
+          Budget
+        </option>
+        <option
+          className="sorting-item"
+          value="Revenue"
+        >
+          Revenue
+        </option>
+        <option
+          className="sorting-item"
+          value="Vote average"
+        >
+          Vote average
+        </option>
+        <option
+          className="sorting-item"
+          value="Vote count"
+        >
+          Vote count
+        </option>
+      </select>
+    </label>
+  </div>
+</section>
+`;
+
+exports[`when MovieFilter then snapshot created when genres is empty 1`] = `
+<section
+  className="filter-list"
+>
+  <div
+    className="filter-item filter-by-genre"
+  >
+    <ul
+      className="genre-filter"
+    >
+      <li
+        className="genre-filter-item"
+      >
+        <button
+          className="active"
+          onClick={[Function]}
+          type="button"
+        >
+          Drama
+        </button>
+      </li>
+      <li
+        className="genre-filter-item"
+      >
+        <button
+          className=""
+          onClick={[Function]}
+          type="button"
+        >
+          Romance
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div
+    className="filter-item filter"
+  >
+    <label
+      className="sorting-title"
+      htmlFor="date-filter"
+    >
+      SORT BY
+      <select
+        className="sorting-select"
+        id="date-filter"
+        onChange={[Function]}
+        value="Release"
+      >
+        <option
+          className="sorting-item"
+          value="Release"
+        >
+          Release
+        </option>
+        <option
+          className="sorting-item"
+          value="Runtime"
+        >
+          Runtime
+        </option>
+        <option
+          className="sorting-item"
+          value="Budget"
+        >
+          Budget
+        </option>
+        <option
+          className="sorting-item"
+          value="Revenue"
+        >
+          Revenue
+        </option>
+        <option
+          className="sorting-item"
+          value="Vote average"
+        >
+          Vote average
+        </option>
+        <option
+          className="sorting-item"
+          value="Vote count"
+        >
+          Vote count
+        </option>
+      </select>
+    </label>
+  </div>
+</section>
+`;
