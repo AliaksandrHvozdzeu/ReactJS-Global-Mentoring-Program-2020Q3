@@ -37,11 +37,11 @@ describe("MovieReducer", () => {
   });
 
   test("DELETE_MOVIES_SUCCESS_TYPE", () => {
-    initialState.movies.push({ id: 4567 });
+    initialState.movies.push({ id: 19 });
     initialState.offset = 2;
     const newState = movieReducer(initialState, {
       type: Constants.DELETE_MOVIES_SUCCESS_TYPE,
-      payload: 4567
+      payload: 19
     });
     expect(newState.movies.length).toEqual(1);
     expect(newState.movies).toEqual([{ id: 123 }]);
@@ -49,49 +49,44 @@ describe("MovieReducer", () => {
   });
 
   test("DELETE_MOVIES_SUCCESS_TYPE 2", () => {
-    initialState.movies.push({ id: 4567 });
+    initialState.movies.push({ id: 19 });
     initialState.offset = 2;
     const newState = movieReducer(initialState, {
       type: Constants.DELETE_MOVIES_SUCCESS_TYPE,
       payload: 987
     });
     expect(newState.movies.length).toEqual(2);
-    expect(newState.movies).toEqual([{ id: 123 }, { id: 4567 }]);
+    expect(newState.movies).toEqual([{ id: 123 }, { id: 19 }]);
     expect(newState.offset).toEqual(1);
   });
 
-  test("when UPDATE_GENRES triggered then genres from movies are joined", () => {
-    initialState.movies.push({ id: 4567, genres: ["Comedy", "Drama"] });
+  test("when UPDATE_GENRES_TYPE", () => {
+    initialState.movies.push({ id: 19, genres: ["Comedy", "Drama"] });
     initialState.movies[0].genres = ["Action", "Drama"];
-
     const newState = movieReducer(initialState, {
       type: Constants.UPDATE_GENRES_TYPE
     });
-
     expect(newState.genres).toEqual(["All", "Action", "Drama", "Comedy"]);
   });
 
   test("when EDIT_MOVIE_SUCCESS_TYPE", () => {
-    initialState.movies.push({ id: 4567, genres: ["Comedy", "Drama"] });
-
+    initialState.movies.push({ id: 19, genres: ["Comedy", "Drama"] });
     const newState = movieReducer(initialState, {
       type: Constants.EDIT_MOVIE_SUCCESS_TYPE,
       payload: {
-        id: 4567,
+        id: 19,
         genres: ["TEST"]
       }
     });
-
     expect(newState.movies.length).toEqual(2);
     expect(newState.movies).toEqual([
       { id: 123 },
-      { id: 4567, genres: ["TEST"] }
+      { id: 19, genres: ["TEST"] }
     ]);
   });
 
   test("when EDIT_MOVIE_SUCCESS_TYPE 2", () => {
-    initialState.movies.push({ id: 4567, genres: ["Comedy", "Drama"] });
-
+    initialState.movies.push({ id: 19, genres: ["Comedy", "Drama"] });
     const newState = movieReducer(initialState, {
       type: Constants.EDIT_MOVIE_SUCCESS_TYPE,
       payload: {
@@ -99,7 +94,6 @@ describe("MovieReducer", () => {
         genres: ["TEST"]
       }
     });
-
     expect(newState.movies.length).toEqual(3);
     expect(newState.movies).toEqual([
       {
@@ -110,7 +104,7 @@ describe("MovieReducer", () => {
           "Comedy",
           "Drama"
         ],
-        "id": 4567
+        "id": 19
       },
       {
         "genres": [
@@ -122,13 +116,13 @@ describe("MovieReducer", () => {
   });
 
   test("when ADD_MOVIE_SUCCESS_TYPE", () => {
-    const newMovie = { id: 4678 };
+    const newMovie = { id: 22 };
     const newState = movieReducer(initialState, {
       type: Constants.ADD_MOVIE_SUCCESS_TYPE,
       payload: newMovie
     });
     expect(newState.movies.length).toEqual(2);
-    expect(newState.movies).toEqual([{ id: 123 }, { id: 4678 }]);
+    expect(newState.movies).toEqual([{ id: 123 }, { id: 22 }]);
   });
 
   test("INVALID", () => {

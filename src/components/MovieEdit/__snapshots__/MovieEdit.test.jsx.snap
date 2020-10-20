@@ -106,6 +106,34 @@ Array [
                 Drama, Romance
               </span>
             </div>
+            <button
+              aria-label="Clear Selected"
+              className="go367124755 clear-selected-button"
+              onClick={[Function]}
+              type="button"
+            >
+              <svg
+                className="dropdown-search-clear-icon gray"
+                fill="none"
+                height="24"
+                stroke="currentColor"
+                strokeWidth="2"
+                width="24"
+              >
+                <line
+                  x1="18"
+                  x2="6"
+                  y1="6"
+                  y2="18"
+                />
+                <line
+                  x1="6"
+                  x2="18"
+                  y1="6"
+                  y2="18"
+                />
+              </svg>
+            </button>
             <img
               alt="arrow_down"
               className="arrow"
