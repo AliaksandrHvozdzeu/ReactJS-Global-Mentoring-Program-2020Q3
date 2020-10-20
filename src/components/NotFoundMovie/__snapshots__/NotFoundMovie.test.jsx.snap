@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when NotFoundMovie then snapshot created 1`] = `
+<section
+  className="movie-no-results"
+>
+  No Movie Found
+</section>
+`;

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Calendar then snapshot created 1`] = `
+Array [
+  <label
+    htmlFor="id"
+  >
+    title
+    <input
+      className="input"
+      id="id"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      type="type"
+      value="value"
+    />
+  </label>,
+  <p
+    className="input-error"
+  >
+    error
+  </p>,
+]
+`;

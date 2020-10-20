@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Footer rendered then Brand component is rendered 1`] = `
+<footer>
+  <div
+    className="wrapper unselectable"
+  >
+    <p
+      className="app-title"
+    >
+      <span
+        className="app-title-name"
+      >
+        netflix
+      </span>
+      roulette
+    </p>
+  </div>
+</footer>
+`;

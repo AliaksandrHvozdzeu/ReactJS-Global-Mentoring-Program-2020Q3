@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when MoviePreview then snapshot created 1`] = `
+<div
+  className="preview-wrapper"
+>
+  <div
+    className="brand"
+  >
+    <p
+      className="brand-title"
+    >
+      <a
+        className="brand-title-name"
+        href=" #"
+        id="blink"
+        onClick={[Function]}
+      >
+        netflix
+      </a>
+      roulette
+    </p>
+  </div>
+  <div
+    className="movie-preview unselectable"
+  >
+    <img
+      alt="Movie poster"
+      className="poster"
+      onClick={[Function]}
+      onError={[Function]}
+      role="presentation"
+      src="https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg"
+    />
+    <div
+      className="movie-preview-description-block"
+    >
+      <h1
+        className="movie-preview-title"
+      >
+        The Shape of Water
+      </h1>
+      <p
+        className="movie-preview-rating"
+      >
+        7.3
+      </p>
+      <p
+        className="movie-preview-genres"
+      />
+      <p
+        className="movie-preview-release"
+      >
+        2017
+      </p>
+      <p
+        className="movie-preview-runtime"
+      >
+        123
+      </p>
+      <p
+        className="movie-preview-description"
+      >
+        An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.
+      </p>
+    </div>
+  </div>
+  <button
+    className="close-preview-button"
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    type="button"
+  >
+    <img
+      alt="close preview"
+      className="close-preview"
+      src="../../../../public/images/search_42.png"
+    />
+  </button>
+</div>
+`;

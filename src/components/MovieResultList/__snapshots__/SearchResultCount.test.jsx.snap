@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when SearchResultCount then snapshot created 1`] = `
+<div
+  className="movie-result-title"
+>
+  <p
+    className="movie-result-text"
+  >
+    <span
+      className="movie-result-count"
+    >
+      200
+    </span>
+    movies found
+  </p>
+</div>
+`;

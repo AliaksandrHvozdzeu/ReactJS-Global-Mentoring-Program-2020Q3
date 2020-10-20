@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Wrapper rendered then child component should be rendered 1`] = `
+<div
+  className="wrapper unselectable"
+>
+  <div
+    className="test"
+  >
+    Test child element
+  </div>
+</div>
+`;

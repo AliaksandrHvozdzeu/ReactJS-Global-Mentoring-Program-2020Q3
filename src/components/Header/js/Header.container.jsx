@@ -71,7 +71,7 @@ HeaderContainer.defaultProps = {
 
 const mapStateToProps = (state) => ({
   preview: state.movies.preview,
-  searchString: state.filters.searchString
+  //searchString: state.filters.searchString
 });
 
 const mapDispatchToProps = (dispatch) => ({

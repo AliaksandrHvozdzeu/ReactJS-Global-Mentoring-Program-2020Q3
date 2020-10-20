@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when SearchResultCount then snapshot created 1`] = `
+<section
+  className="movie-result"
+>
+  <div
+    className="movie-result-title"
+  >
+    <p
+      className="movie-result-text"
+    >
+      <span
+        className="movie-result-count"
+      >
+        2
+      </span>
+      movies found
+    </p>
+  </div>
+  <div
+    className="movie-result-list"
+  >
+    <div
+      className="movie-result-item movie"
+    >
+      <img
+        alt="movie poster"
+        className="movie-logo"
+        onClick={[Function]}
+        onError={[Function]}
+        onKeyDown={[Function]}
+        role="presentation"
+        src="https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg"
+      />
+      <div
+        className="movie-description"
+      >
+        <button
+          className="movie-title"
+          onClick={[Function]}
+          type="button"
+        >
+          Star Wars: The Last Jedi
+        </button>
+        <p
+          className="movie-genre"
+        >
+          Fantasy, Adventure, Science Fi...
+        </p>
+        <p
+          className="movie-release"
+        >
+          2017
+        </p>
+      </div>
+      <button
+        className="movie-menu movie-menu-closed"
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="movie-menu-button"
+        />
+      </button>
+    </div>
+    <div
+      className="movie-result-item movie"
+    >
+      <img
+        alt="movie poster"
+        className="movie-logo"
+        onClick={[Function]}
+        onError={[Function]}
+        onKeyDown={[Function]}
+        role="presentation"
+        src="https://image.tmdb.org/t/p/w500/jx5p0aHlbPXqe3AH9G15NvmWaqQ.jpg"
+      />
+      <div
+        className="movie-description"
+      >
+        <button
+          className="movie-title"
+          onClick={[Function]}
+          type="button"
+        >
+          Return of the Jedi
+        </button>
+        <p
+          className="movie-genre"
+        >
+          Adventure, Action, Science Fic...
+        </p>
+        <p
+          className="movie-release"
+        >
+          1983
+        </p>
+      </div>
+      <button
+        className="movie-menu movie-menu-closed"
+        onClick={[Function]}
+        type="button"
+      >
+        <div
+          className="movie-menu-button"
+        />
+      </button>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`when SearchResultCount then snapshot created when movies list is empty 1`] = `
+<section
+  className="movie-result"
+>
+  <section
+    className="movie-no-results"
+  >
+    No Movie Found
+  </section>
+</section>
+`;

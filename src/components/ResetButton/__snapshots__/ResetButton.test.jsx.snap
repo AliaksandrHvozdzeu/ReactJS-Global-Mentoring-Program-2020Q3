@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when ResetButton then snapshot created 1`] = `
+<button
+  className="reset-button"
+  onClick={[MockFunction]}
+  type="button"
+>
+  RESET
+</button>
+`;

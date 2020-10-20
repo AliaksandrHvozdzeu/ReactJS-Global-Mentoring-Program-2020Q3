@@ -9,6 +9,13 @@ import {
   onClearSearch,
   moviesLoaded,
   getMovieById,
+  updateGenres,
+  moviesLoadedDefault,
+  deleteMovieFromStore,
+  addMovieInStore,
+  editMovieInStore,
+  getMovieBySearchString,
+  moviePreview,
 } from './movieAction';
 
 export default {
@@ -22,4 +29,11 @@ export default {
   onClearSearch,
   filteredMovies,
   getMovieById,
+  updateGenres,
+  moviesLoadedDefault,
+  deleteMovieFromStore,
+  addMovieInStore,
+  editMovieInStore,
+  getMovieBySearchString,
+  moviePreview,
 };

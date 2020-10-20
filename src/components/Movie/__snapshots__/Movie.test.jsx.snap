@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Movie then snapshot created 1`] = `
+<div
+  className="movie-result-item movie"
+>
+  <img
+    alt="movie poster"
+    className="movie-logo"
+    onClick={[Function]}
+    onError={[Function]}
+    onKeyDown={[Function]}
+    role="presentation"
+    src="https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg"
+  />
+  <div
+    className="movie-description"
+  >
+    <button
+      className="movie-title"
+      onClick={[Function]}
+      type="button"
+    >
+      Fifty Shades Freed
+    </button>
+    <p
+      className="movie-genre"
+    >
+      Drama, Romance
+    </p>
+    <p
+      className="movie-release"
+    >
+      2018
+    </p>
+  </div>
+  <button
+    className="movie-menu movie-menu-closed"
+    onClick={[Function]}
+    type="button"
+  >
+    <div
+      className="movie-menu-button"
+    />
+  </button>
+</div>
+`;

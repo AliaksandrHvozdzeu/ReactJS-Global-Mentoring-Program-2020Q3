@@ -8,8 +8,8 @@ import MovieMenu from '../../MovieMenu';
 import MovieEdit from '../../MovieEdit';
 import MovieDelete from '../../MovieDelete';
 import Header from '../../Header';
-import defaultPoster from '../../../../public/images/not-found.png';
 import MoviePoster from '../../MoviePoster';
+import Constants from '../../../constants';
 import store from '../../../store';
 import '../css/Movie.css';
 
@@ -52,7 +52,7 @@ export default function Movie({ details }) {
         <MoviePoster src={details.poster_path}
                      alt="movie poster"
                      className="movie-logo"
-                     fallback={defaultPoster}
+                     fallback={Constants.DEFAULT_POSTER}
                      onClick={onShowMovieDetail}
                      onKeyDown={onShowMovieDetail}/>
         <div className="movie-description">

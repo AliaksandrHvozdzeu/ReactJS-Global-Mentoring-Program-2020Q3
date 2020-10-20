@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Input then snapshot created 1`] = `
+<label
+  className="input-email-label"
+  htmlFor="login-email"
+>
+  title
+  <input
+    className="input-email"
+    id="login-email"
+    type="email"
+  />
+</label>
+`;

@@ -6,7 +6,7 @@ export default function MovieSorting({ title, options, onAction, selectedOption 
 
   const [selected, setSelected] = useState(selectedOption || options[0]);
   const onChange = (event) => {
-    const { value } = event.target;
+    const value = event.target;
     onAction(value);
     setSelected(value);
   };

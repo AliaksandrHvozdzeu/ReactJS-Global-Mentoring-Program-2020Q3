@@ -4,18 +4,13 @@ import '../css/InputEmail.css';
 
 export default function InputEmail({ title }) {
 
-  const validate = () => {
-
-  };
-
   return (
     <>
       <label htmlFor="login-email" className="input-email-label">
         {title}
         <input type="email"
                id="login-email"
-               className="input-email"
-               onChange={validate}/>
+               className="input-email"/>
       </label>
     </>
   );

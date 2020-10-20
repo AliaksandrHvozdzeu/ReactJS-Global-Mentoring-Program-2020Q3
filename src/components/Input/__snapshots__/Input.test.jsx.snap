@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when Input then snapshot created 1`] = `
+Array [
+  <label
+    className="visibility"
+    htmlFor="id"
+  >
+    title
+    <input
+      className="input"
+      id="id"
+      name="name"
+      onBlur={[Function]}
+      onChange={[Function]}
+      readOnly={false}
+      type="type"
+      value="value"
+    />
+  </label>,
+  <p
+    className="input-error"
+  >
+    error
+  </p>,
+]
+`;
