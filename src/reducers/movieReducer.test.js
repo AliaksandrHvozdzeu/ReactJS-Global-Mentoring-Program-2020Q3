@@ -20,7 +20,7 @@ describe("MovieReducer", () => {
     };
   });
 
-  test("when SET_FILTERED_RESULTS triggered then filteredResults populated", () => {
+  test("when SET_FILTERED_RESULTS", () => {
     const newState = movieReducer(initialState, {
       type: Constants.SET_FILTERED_RESULTS_TYPE,
       payload: [{ id: 456 }]
@@ -28,7 +28,7 @@ describe("MovieReducer", () => {
     expect(newState.filteredResults).toEqual([{ id: 456 }]);
   });
 
-  test("PREVIEW_MOVIE_TYPE", () => {
+  test("when PREVIEW_MOVIE_TYPE", () => {
     const newState = movieReducer(initialState, {
       type: Constants.PREVIEW_MOVIE_TYPE,
       payload: { id: 456 }
@@ -36,7 +36,7 @@ describe("MovieReducer", () => {
     expect(newState.preview).toEqual({ id: 456 });
   });
 
-  test("DELETE_MOVIES_SUCCESS_TYPE", () => {
+  test("when DELETE_MOVIES_SUCCESS_TYPE", () => {
     initialState.movies.push({ id: 19 });
     initialState.offset = 2;
     const newState = movieReducer(initialState, {
@@ -48,7 +48,7 @@ describe("MovieReducer", () => {
     expect(newState.offset).toEqual(1);
   });
 
-  test("DELETE_MOVIES_SUCCESS_TYPE 2", () => {
+  test("when DELETE_MOVIES_SUCCESS_TYPE 2", () => {
     initialState.movies.push({ id: 19 });
     initialState.offset = 2;
     const newState = movieReducer(initialState, {
@@ -125,14 +125,14 @@ describe("MovieReducer", () => {
     expect(newState.movies).toEqual([{ id: 123 }, { id: 22 }]);
   });
 
-  test("INVALID", () => {
+  test("when INVALID", () => {
     const newState = movieReducer(initialState, {
       type: "INVALID"
     });
     expect(newState).toEqual(initialState);
   });
 
-  test("CLEAR_SEARCH_INPUT_TYPE", () => {
+  test("when CLEAR_SEARCH_INPUT_TYPE", () => {
     const newState = movieReducer(initialState, {
       type: Constants.CLEAR_SEARCH_INPUT_TYPE
     });
@@ -150,7 +150,7 @@ describe("MovieReducer", () => {
     });
   });
 
-  test("FETCH_MOVIES_LIST_SUCCESS_TYPE", () => {
+  test("when FETCH_MOVIES_LIST_SUCCESS_TYPE", () => {
     const newMovie = {
       movies: [
         {
@@ -185,7 +185,7 @@ describe("MovieReducer", () => {
     ]);
   });
 
-  test("LOAD_MOVIES_DEFAULT_TYPE", () => {
+  test("when LOAD_MOVIES_DEFAULT_TYPE", () => {
     const newMovie = {
       movies: [
         {
@@ -220,7 +220,7 @@ describe("MovieReducer", () => {
     ]);
   });
 
-  test("LOAD_MOVIES_BY_TITLE_TYPE", () => {
+  test("when LOAD_MOVIES_BY_TITLE_TYPE", () => {
     const newMovie = {
       data: [
         {

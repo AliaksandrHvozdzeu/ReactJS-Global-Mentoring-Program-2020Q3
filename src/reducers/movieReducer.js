@@ -32,7 +32,6 @@ const movieReducer = (state = initialState, action) => {
       return { ...state, movies: result, offset: state.offset - 1 };
     }
     case Constants.UPDATE_GENRES_TYPE: {
-      console.log(state.movies);
       const newGenres = new Set(state.movies.map((movie) => movie.genres).flat());
       return { ...state, genres: ['All', ...newGenres] };
     }

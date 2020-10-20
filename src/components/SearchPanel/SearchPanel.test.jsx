@@ -40,7 +40,6 @@ describe("when SearchPanel", () => {
     };
     input.simulate("change", e.target);
     input.update();
-    console.log(input.debug());
     expect(input.text()).toEqual("");
   });
 
@@ -55,7 +54,6 @@ describe("when SearchPanel", () => {
     };
     input.simulate("input", e.target);
     input.update();
-    console.log(input.debug());
     expect(input.text()).toEqual("");
   });
 
