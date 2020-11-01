@@ -6,9 +6,9 @@ import NotFoundPage from './components/NotFoundPage';
 import Home from './components/Home';
 import './App.css';
 
-const App = () => (
+const App = ({ Router, location, context }) => (
   <Provider store={store}>
-    <Router>
+    <Router location={location} context={context}>
       <Switch>
         <Route exact path="/404" component={NotFoundPage}>
           <NotFoundPage message="Page not found"/>
@@ -18,6 +18,5 @@ const App = () => (
     </Router>
   </Provider>
 );
-
 
 export default App;

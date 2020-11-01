@@ -1,6 +1,10 @@
 import React from 'react';
-import { render } from 'react-dom';
-import App from './App';
+import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 
-const rootElement = document.getElementById('app');
-render(<App />, rootElement);
+import App from './app';
+
+ReactDOM.hydrate(
+  <App Router={BrowserRouter} />,
+  document.getElementById('container'),
+);
