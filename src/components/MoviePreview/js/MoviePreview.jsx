@@ -34,7 +34,7 @@ export default function MoviePreview({ details }) {
                 type="button"
                 onClick={onClosePreview}
                 onKeyDown={onClosePreview}>
-          <img src="../../../../public/images/search_42.png"
+          <img src="../images/search_42.png"
                className="close-preview"
                alt="close preview" />
         </button>

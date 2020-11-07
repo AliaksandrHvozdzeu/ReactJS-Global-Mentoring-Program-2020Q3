@@ -8,7 +8,7 @@
 }
 
 html::-webkit-scrollbar {
-    width: 0px;
+    width: 0;
     background: var(--grey-darker);
 }
 
@@ -41,13 +41,13 @@ input[type="date"]::-webkit-inner-spin-button {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background: url(/images/calendar.png) center/80% no-repeat;
+    background: url("../public/images/calendar.png") center/80% no-repeat;
     color: rgba(0, 0, 0, 0);
     opacity: 0.5
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator:hover {
-    background: url(/images/calendar.png) center/80% no-repeat;
+    background: url("../public/images/calendar.png") center/80% no-repeat;
     opacity: 0.8
 }
 
@@ -86,7 +86,7 @@ input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
     height: 25px;
     width: 25px;
-    background: url(/images/clear.png) center/80% no-repeat;
+    background: url("../public/images/clear.png") center/80% no-repeat;
 }
 
 input:focus {
