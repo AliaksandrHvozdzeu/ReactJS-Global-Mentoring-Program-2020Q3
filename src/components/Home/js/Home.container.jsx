@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Home from "./Home";
 import { movieActions } from "../../../store/actions";
 
+// PATTERN: Adapter
 const HomeContainer = ({ common, movies, filters, onFilterMovies }) => {
 
   const { path } = useRouteMatch();
