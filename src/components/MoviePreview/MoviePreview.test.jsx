@@ -36,7 +36,7 @@ describe("when MoviePreview", () => {
                 type="button"
                 onClick={onClosePreview}
                 onKeyDown={onClosePreview}>
-          <img src="../../../../public/images/search_42.png"
+          <img src="../public/images/search_42.png"
                className="close-preview"
                alt="close preview" />
         </button>

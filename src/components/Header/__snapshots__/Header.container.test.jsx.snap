@@ -78,7 +78,7 @@ exports[`when AddButton then snapshot created 1`] = `
       <img
         alt="close preview"
         className="close-preview"
-        src="../../../../public/images/search_42.png"
+        src="../images/search_42.png"
       />
     </button>
   </div>
@@ -297,7 +297,7 @@ exports[`when AddButton then snapshot created when preview is null 1`] = `
       <img
         alt="close preview"
         className="close-preview"
-        src="../../../../public/images/search_42.png"
+        src="../images/search_42.png"
       />
     </button>
   </div>

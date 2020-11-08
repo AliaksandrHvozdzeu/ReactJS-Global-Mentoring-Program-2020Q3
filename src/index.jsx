@@ -6,5 +6,5 @@ import App from './app';
 
 ReactDOM.hydrate(
   <App Router={BrowserRouter} />,
-  document.getElementById('container'),
+  document.getElementById('app'),
 );

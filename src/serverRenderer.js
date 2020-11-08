@@ -1,9 +1,9 @@
 import React from "react";
-import { renderToString } from "react-dom/server";
+import renderToString from "react-dom/server";
 import { StaticRouter } from "react-router";
 import fs from "fs";
 import path from "path";
-import App from "./App";
+import App from "./app";
 
 function renderHtml(html) {
   const data = fs.readFileSync(path.join("./dist", "index.html"), "utf8");
